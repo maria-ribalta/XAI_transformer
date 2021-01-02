@@ -751,7 +751,17 @@ https://www.tooplate.com/view/2117-infinite-loop
               <button class="accordion">Beam</button>
               <div class="panel">
                 <br>
-                <p>Lorem ipsum...</p>
+                <p>As this projects intends to understand the overall ideas and intuitions behind the transformer rather than digging into the details, we have avoided as much as possible 
+                  mentioning dimensions and numbers. Furthermore, they have many different factors that can affect them (the type of architecture, the structure of it, the way one may want to train the model,
+                  the size of the data, the resources available, etc). However, there is one dimension that is interestingt in this type of task and does not always appear explained. The Beam dimension. <br><br>
+                  We could define the beam dimension as the hypothesis dimension we allow the model to investigate. As we already mentioned, the input of the Decoder is the last output and it can drag error.
+                  That is why the network takes the top Beam most probable words to be the translation, predicts each of the B most probable next words / tokens and keeps, from the Beam first hypothesized words, the one that provides less error. This is repeated at each step.
+                  <br> <br>
+                  An example, if we want to translate our already known base sentence: 'My mum eats a carrot'. We start the process, our Beam dimension is 2, for the first word we hypothesize the translation to be 'ma' and 'mon'. The network will translate the following word taking into account 
+                  both articles: 'ma mère' and 'mon mère' and will conclude that, based on the error, 'ma' is a better prediction.
+                  <br><br>
+                  This does not magically convert the network in the perfect translation machine, however it does lower the possibility of making a wrong prediction.
+                </p>
               </div> 
 
               <button class="accordion">Softmax function</button>
@@ -770,13 +780,27 @@ https://www.tooplate.com/view/2117-infinite-loop
               <button class="accordion">Activation functions</button>
               <div class="panel">
                 <br>
-                <p>Lorem ipsum...</p>
+                <p>Activation functions determine if a Neuron will be 'activated' according to the value it has received. In this architecture we have seen the ReLU activation,
+                  which is the abbreviation for Rectified Linear Unit. This function activates the neuron in case the input received is higher than 0, that is: </p>
+                  <p style="text-align:center;"> 
+                    \( ReLU(x) = max(0, x) \)
+                  </p>
+                <p> However there are lots of different activation functions, each of them more suitable for certain contexts and tasks. Between the most common ones 
+                  we can find the tangent activation function, sigmoid, linear... and many combinations or versions of it: Leaky ReLU, ELU, maxout, etc.
+                </p>
               </div> 
  
               <button class="accordion">Convolutions and CNNs</button>
               <div class="panel">
                 <br>
-                <p>Lorem ipsum...</p>
+                <p>The convolution is a type of operation usually performed in signal processing. It works with two functions: the main signal and 
+                  the kernel function and it expresses how the shape of one is modified by the other. Mathematically it is written as:</p>
+                  <p style="text-align:center;"> 
+                    \( y(t) = x(t) * h(t) = \displaystyle{ (x*h)(t):=\int _{-\infty }^{\infty }x(\tau )h(t-\tau )\,d\tau }\)
+                  </p>
+                <p> It has many uses and applications, even in Deep Learning. Long story short, convolutional Neural Networks (CNNs) use  the signal h 
+                  as weights to be trained and nowadays they are one of the best networks to use in image and video recognition, image classification, etc.
+                </p>
               </div> 
 
               </div><!-- row ending -->
