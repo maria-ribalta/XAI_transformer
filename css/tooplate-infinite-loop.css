@@ -492,6 +492,16 @@ li {
 }
 
 
+.quarter_column {
+  flex: 25%;
+  padding: 5px;
+}
+
+.three_quarter_column {
+  flex: 75%;
+  padding: 5px;
+}
+
 /* Hover Effect */
 /* Common style */
 .grid figure {

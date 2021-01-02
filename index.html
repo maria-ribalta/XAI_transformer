@@ -294,7 +294,6 @@ https://www.tooplate.com/view/2117-infinite-loop
               </div>
               <div class="col-sm-6">
                 <div class="tm-basics-text-container">
-
                   <img src="diagrams/skip-con.png" style="width:60%" class="arch-center">
                   <div class="caption">Diagram of skip connections</div>
                 </div>
@@ -706,7 +705,10 @@ https://www.tooplate.com/view/2117-infinite-loop
               <button class="accordion">BPE</button>
               <div class="panel">
                 <br>
-                <p>Lorem ipsum...</p>
+                <p>Byte pair encoding (or digram coding) is a simple form of data compression. 
+                  It consists in replacing the most common pair of consecutive bytes of the data with a byte that does not occur within that data.
+                  In NLP is a technique that can be applied as part of the preprocessing of the data and can help to reduce, memory-wise, the size
+                of the sets (training, validation and testing) considerably. This way, the training is speeded up while the quality is not seen affected. </p>
               </div> 
 
               <button class="accordion">Label smoothing</button>
@@ -729,16 +731,22 @@ https://www.tooplate.com/view/2117-infinite-loop
                   we must inject some information about the relative or absolute position of the tokens in the sequence." <br></p>
                   
                   <div class="row">
-                    <div class="column">
+                    <div class="three_quarter_column">
                       <p> However, what do sinusoidal functions have to do with order? <br>
                       It is all related with the way bits change as they grow. If we observe the change in bits when augmenting the numbers from one to five in binary, we observe the following behaviour. <br>
                       Somehow this behaves at some level as a sinusoidal movement, here the reason why this type of function is appropiate for this task. </p>
                     </div>
-                    <div class="column">
-                      <img src="diagrams/bits.png" style="width:25%" class="arch-center">
+                    <div class="quarter_column">
+                      <img src="diagrams/bits.png" style="width:50%" class="arch-center">
                     </div>
+                    <p> Therefore in the paper it is chosen a sine and a cosine function (shown below) that are alternated to simulate the change between numbers in a continuous form.</p>
                   </div>
-              </div>
+                  <div class="tm-basics-text-container">
+                    <img src="diagrams/sine_cosine.png" style="width:75%" class="arch-center">
+                    <div class="caption">Sine and cosine components of PE</div>
+                  </div>
+              
+            </div>
 
               <button class="accordion">Beam</button>
               <div class="panel">
@@ -749,7 +757,14 @@ https://www.tooplate.com/view/2117-infinite-loop
               <button class="accordion">Softmax function</button>
               <div class="panel">
                 <br>
-                <p>Lorem ipsum...</p>
+                <p>We have mentioned that after the decoder and as latest step of the forward pass, we apply the softmax function that is: <br>
+                  <p style="text-align:center;"> 
+                    \( softmax(x_{i}) = \displaystyle{\frac{\exp(x_i)}{\sum_j \exp(x_j)}}\)
+                  </p>
+                  The softmax function tries to replicate the behaviour of the maximum function, however, as computing the maximum is not a differentiable function 
+                  it would not be possible for the network to propagate the gradients through it (plainly, we couldn't train the network as it would not update the weights).
+                  For this reason a differentiable function that simulates the maximum is good enough; and it is called 'soft' as we still preserve a part of the non-maximum labels.
+                </p>
               </div> 
 
               <button class="accordion">Activation functions</button>
@@ -757,7 +772,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                 <br>
                 <p>Lorem ipsum...</p>
               </div> 
-
+ 
               <button class="accordion">Convolutions and CNNs</button>
               <div class="panel">
                 <br>
