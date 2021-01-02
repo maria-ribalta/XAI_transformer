@@ -1,0 +1,25 @@
+source template: https://www.tooplate.com/view/2117-infinite-loop
+icons: https://fontawesome.com/icons?d=gallery&m=free
+
+% illustrated transformer
+%http://jalammar.github.io/illustrated-transformer/
+
+% source code
+
+@inproceedings{ott2019fairseq,
+  title = {fairseq: A Fast, Extensible Toolkit for Sequence Modeling},
+  author = {Myle Ott and Sergey Edunov and Alexei Baevski and Angela Fan and Sam Gross and Nathan Ng and David Grangier and Michael Auli},
+  booktitle = {Proceedings of NAACL-HLT 2019: Demonstrations},
+  year = {2019},
+}
+
+
+% Olah & Carter, "Attention and Augmented Recurrent Neural Networks", Distill, 2016. http://doi.org/10.23915/distill.00001 (ARTICLE)
+@article{olah2016attention,
+  author = {Olah, Chris and Carter, Shan},
+  title = {Attention and Augmented Recurrent Neural Networks},
+  journal = {Distill},
+  year = {2016},
+  url = {http://distill.pub/2016/augmented-rnns},
+  doi = {10.23915/distill.00001}
+}

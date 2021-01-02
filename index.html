@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Visualization is all you need</title>
+    <link rel="stylesheet" href="fontawesome-5.5/css/all.min.css" />
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/tooplate-infinite-loop.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!--
+Tooplate 2117 Infinite Loop
+https://www.tooplate.com/view/2117-infinite-loop
+-->
+
+  </head>
+  <body>    
+    <!-- Hero section -->
+    <section id="XAI" class="text-white tm-font-big tm-parallax">
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">              
+        <div class="container">   
+          <div class="tm-next">
+              <a href="#XAI" class="navbar-brand">Explainable AI</a>
+          </div>             
+            
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars navbar-toggler-icon"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#XAI">Home</a> <!-- infinity-->
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#introduction">Introduction</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link tm-nav-link" href="#basics">Basics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link tm-nav-link" href="#architecture">Architecture</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#attention">Attention</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link tm-nav-link" href="#train">Training</a> 
+            </li> 
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#tips">Details</a> <!--contact-->
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link tm-nav-link" href="#more">More</a>
+            </li>                     
+            </ul>
+          </div>        
+        </div>
+      </nav>
+      
+      <div class="text-center tm-hero-text-container">
+        <div class="tm-hero-text-container-inner">
+            <h2 class="tm-hero-title"> <b> Visualization is all you need</b></h2>
+            <p class="tm-hero-subsubtitle">Transformers XAI - Understand the basics of the state-of-the-art </p>
+        </div>        
+      </div>
+
+ 
+    </section>
+
+    <section id="introduction" class="tm-section-pad-top">
+      
+      <div class="container">
+
+            <div class="row tm-content-box"><!-- first row -->
+                <div class="col-lg-12 col-xl-12">
+                    <div class="tm-intro-text-container">
+                      <h2 class="tm-text-primary mb-4 tm-section-title">Transformers?</h2>
+                      <!--
+                      <img src="img/transformer.png" alt="Image" class="img-fluid mx-auto" aling=right><p class="mb-4 tm-intro-text">
+                          If you ask normal people to describe transformers, they will probably start talking about a car that becomes a killer machine. However, if you are here, you probably think about something else and probably are not so able to explain what does exactly do or how specifically it works. <br>
+                          In this project about Explainable AI, it is intended for you, my reader, to understand a little bit more about the neural network introduced in <a href="https://arxiv.org/pdf/1706.03762.pdf">Attention is all you need</a> and the mechanisms it uses<br>
+                      <!--AAAAAAAAAAAAAAAAAA -->
+                      <div class="row">
+                                                
+                        <div class="col-sm-12 col-md-6">
+                          <figure class="tm-transformer-item">
+                            <img src="img/transformers.png" alt="Image" class="img-fluid mx-auto" aling=right width=1000000><p class="mb-4 tm-intro-text">
+                          </figure>
+                          
+                        </div>
+                        
+                        <div class="col-sm-26 col-md-6">
+                          If you ask normal people to describe transformers, they will probably start talking about a car that becomes a killer machine. However, if you are here, you probably think about something else and probably are not so able to explain what does exactly do or how specifically it works. <br>
+                          In this project about Explainable AI, it is intended for you, my reader, to understand a little bit more about the neural network introduced in <a href="https://arxiv.org/pdf/1706.03762.pdf">Attention is all you need</a> and the mechanisms it uses<br>                           
+                        </div>
+                        
+                        
+                    </div><!-- row ending -->
+                    
+                          <!--AAAAAAAAAAAAAAAAAA-->
+                      </div>
+                </div>
+              </div>
+            <div class="row tm-content-box"><!-- first row -->
+              <div class="col-lg-12 col-xl-12">
+                <h2 class="tm-text-primary mb-4 tm-section-title">Why? Seq to Seq?</h2>
+              </div>
+            </div><!-- first row -->
+            
+            <div class="row tm-content-box"><!-- second row -->
+        		<div class="col-lg-1">
+                    <i class="fas fa-3x fa-exclamation-triangle text-center tm-icon"></i>
+                    <!--<i class="fas fa-3x fa-chart-pie text-center tm-icon"></i>-->
+                </div>
+                <div class="col-lg-5">
+                    <div class="tm-intro-text-container">
+                        <h2 class="tm-text-primary mb-4">Attention</h2>
+                        <p class="mb-4 tm-intro-text">
+                          The attention mechanism allows the NN to understand the sequence of words in a way similar to what we humans do, permitting distinction between relevant and irrelevant words inside of it</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-1">
+                    <i class="fas fa-3x fa-stopwatch text-center tm-icon"></i> 
+                    <!-- <i class="fas fa-chart-pie"></i> -->
+                </div>
+                <div class="col-lg-5">
+                    <div class="tm-intro-text-container">
+                        <h2 class="tm-text-primary mb-4">Velocity</h2>
+                        <p class="mb-4 tm-intro-text">
+                          The Encoder-Decoder architecture alongside with the attention implementation, allows enough parallelization to have a quality model in 12h with P100 GPUs</p>
+                    </div>
+                </div>
+
+            </div><!-- second row -->
+            
+            <div class="row tm-content-box"><!-- third row -->
+        		<div class="col-lg-1">
+                    <i class="fas fa-3x fa-puzzle-piece text-center tm-icon"></i>
+                </div>
+                <div class="col-lg-5">
+                    <div class="tm-intro-text-container">
+                        <h2 class="tm-text-primary mb-4">Adaptable</h2>
+                        <p class="mb-4 tm-intro-text">
+                      The structure of the data and training methodology makes it suitable for different tasks like machine translation, language modelling, feature extraction...</p>
+                        <!--
+                          <div class="tm-continue">
+                            <a href="#architecture" class="tm-intro-text tm-btn-primary">Learn More</a>
+                        </div> -->
+                    </div>
+                </div>
+                
+                <div class="col-lg-1">
+                    <i class="far fa-3x fa-eye text-center tm-icon"></i>
+                </div>
+                <div class="col-lg-5">
+                    <div class="tm-intro-text-container">
+                      <h2 class="tm-text-primary mb-4">An eye in the past</h2>
+                        <p class="mb-4 tm-intro-text">
+                      The attention mechanism, the positional encoding and the skip (or residual) connections allow to know where in the sentence we are and not forget to what we have seen without overflowing the model or leading to exploding gradients due to long sentences</p>
+                          <!--
+                          <div class="tm-continue">
+                            <a href="#architecture" class="tm-intro-text tm-btn-primary">Details</a>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div><!-- third row -->
+
+        </div>
+      
+    </section>
+
+    <section id="basics" class="tm-section-pad-top">
+      
+      <div class="container">
+            <div class="row tm-content-box"><!-- title -->
+              <div class="col-lg-12 col-xl-12">
+                <h2 class="text-white mb-4 tm-section-title">Basic Notions</h2>
+                <p class="mb-4 tm-basics-text">
+                  Before we begin, we will clarify some basic notions that will help to understand how the Transformer works and how does it achieve the results it does. To do so, we will
+                  cover all the mechanisms it applies to interpret the natural language the way humans do. All along, we will cover the steps by using analogies with the sentence
+                  'My mum eats a carrot'.
+                </p>
+              </div>
+            </div><!-- title -->
+            
+            <div class="row tm-content-box"><!-- first row -->
+
+                <div class="col-sm-6">
+                    <div class="tm-basics-text-container">
+                        <h2 class="tm-text-primary-basics mb-4">Embeddings</h2>
+                        <p class="mb-4 tm-basics-text">
+                          A word embedding is the representation of the natural language in form of a vector of real numbers. <br>
+                          For instance, an embedding could be a vector of 26 numbers where each of them would be a letter of the alphabet and the quantity of such letter it is found in a certain word.
+                          However, embeddings tend to be more complex, as using this last example the embedding for coin and icon would be the exact same.
+                          Recall that the vector represents the structure of the language we choose, not necessarily words: they could represent a letter, part of a word, a word or a whole sentence itself.
+                          Although, the most common is for them to be a word or part of it.</p>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6">
+                    <div class="tm-basics-text-container">
+                      <object width="1056" height="500" data="plots/carrot.html"></object>
+                    </div>
+                </div>
+
+            </div><!-- first row -->
+            
+            
+            <div class="row tm-content-box"><!-- second row -->
+
+                <div class="col-sm-6">
+                    <div class="tm-basics-text-container">
+                      <img src="diagrams/tokens.png" style="width:35%" class="arch-center">
+                      <div class="caption">Real example of tokenization</div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6">
+                    <div class="tm-basics-text-container">
+                      <h2 class="tm-text-primary-basics mb-4">Tokens</h2>
+                      <p class="mb-4 tm-basics-text">
+                        In the Transformer architecture, each embedding represents a word token. It is any representation of a fragment of the natural language, which can be either a whole word or a fragment of it depending on several aspects: 
+                        the algorithm of tokenization it is chosen, the frequency it has on the language and if some encoding is applied, the semantical meaning they provide, etc. <br>
+                        In this case, each token is a part of a word or a word itself, punctuation signs count with an own token (commas, apostrophes, etc) and a special one (&#60eos&#62) is used to indicate end of sentence. <br>
+                        Therefore the relationship between tokens and words is not linear, as it can be appreciated on the example.
+                    </div>
+                </div>
+
+            </div> <!-- second row -->
+
+            <div class="row tm-content-box"><!-- third row -->              
+              <div class="col-sm-6">
+                  <div class="tm-basics-text-container">
+                    <h2 class="tm-text-primary-basics mb-4">Attention</h2>
+                    <p class="mb-4 tm-basics-text">
+                    The attention mechanism permits the network to identify which tokens are more related between them. In human terms, it is the 
+                  intuition that tells you that what is eaten is the fish and who eats it is my mum. Mathematically, this is more abstract and harder to explain but 
+                the base of all is the scaled dot-product attention shown. We will dig into detail in <a href="#attention">Attention</a>.<br>
+                We will see that the Transformers uses what is called as multi-head attention and that there will be two types of it, encoder-decoder attention and self-attention.
+                <br> Each of them is specific on either the Encoder part of the architecture or the Decoder.
+              </p>
+                  </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="tm-basics-text-container">
+                  <img src="diagrams/attention.png" style="width:50%" class="arch-center">
+                  <div class="caption">Scaled dot-product attention</div>
+                </div>
+            </div>
+
+          </div> <!-- third row -->
+
+          <div class="row tm-content-box"><!-- fourth row -->
+
+            <div class="col-sm-6">
+                <div class="tm-basics-text-container">
+                  <br>
+                  <object width="1056" height="370" data="plots/sinus.html"></object>
+                  <div class="caption">Sinusoidal functions are usually used for positional encoding</div>
+                </div>
+            </div>
+            
+            <div class="col-sm-6">
+                <div class="tm-basics-text-container">
+                  <h2 class="tm-text-primary-basics mb-4"> Positional encoding </h2>
+                  <p class="mb-4 tm-basics-text">
+                    We have seen how the neural network identifies a word and how it relates their meanings, but how does it determine the order of the words? 
+                    Because obviously, saying 'My mum eats a carrot' is not the same as 'A carrot eats my mum'. <br>
+                    This is achieved thanks to what we call positional encoding, a vector of the same dimension as the embeddings that somehow contains information about the position 
+                  of the token within a sentence. Said vectors can be trained weights (optimized during the training step) or pre-defined functions that work well enough. In the transformer,
+                the autors tried both methods using a mix of sinusoidal functions for the latter one, which they kept as the results were pretty similar with both techniques.
+              A thorough explanation is found in <a href="#tips">Tips & Tricks</a>.</p>
+                </div>
+            </div>
+
+            <div class="row tm-content-box"><!-- third row -->              
+              <div class="col-sm-6">
+                  <div class="tm-basics-text-container">
+                    <h2 class="tm-text-primary-basics mb-4">Residual connections</h2>
+                    <p class="mb-4 tm-basics-text">
+                    Also known as skip connections or skip-layer connections are those steps in which a tensor is copied and ommits one ore more layers and then it is used at the output of a posterior layer. There, it can be concatenated or added, in here it is the latter case. <br>
+                  They are useful to avoid vanishing gradient problems and they act in such a way that the network does not 'forget' the past as easily, allowing the model to perform better. 
+                As we will see in the architecture, the Transformer counts with several of them and are important to achieve the results it has. For instance,
+                positional information does not get lost or vanished due to the residual connections.</p>
+                  </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="tm-basics-text-container">
+
+                  <img src="diagrams/skip-con.png" style="width:60%" class="arch-center">
+                  <div class="caption">Diagram of skip connections</div>
+                </div>
+            </div>
+
+          </div> <!-- third row -->
+
+        </div> <!-- fourth row -->
+        </div>
+      
+    </section>
+    
+    <section id="architecture" class="tm-section-pad-top-arch tm-parallax-2">      
+      <div class="container tm-architecture-content">
+        <div class="row">
+          <div class="col-lg-12 tm-content-box">
+            <h2 class="text-blackish; text-center mb-4 tm-section-title-architecture">Architecture</h2>
+        </div>
+      </div>
+      <div class="tm-bg-overlay"></div>
+    
+    <!-- slideshow reference: https://www.w3schools.com/howto/howto_js_slideshow.asp-->
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+      <!-- Full-width images with number and caption text -->
+      <div class="mySlides fade">
+        <div class="row tm-content-box">
+
+          <div class="column">
+              <div class="tm-basics-text-container">
+                  <img src="diagrams/encoder_decoder.png" style="width:100%" class="arch-center">
+              </div>
+          </div>
+          
+          <div class="column">
+              <div class="tm-basics-text-container">
+                <h2 class="tm-text-primary-arch mb-4">Encoder-Decoder</h2>
+                  <p class="mb-4 tm-arch-text">
+                    This type of architecture is a Neural Network that transforms the data using two modules: the Encoder and the Decoder. <br>
+                    The first one transforms the original data into an internal representation of it which is sometimes named as 'latent data' in the literature.
+                    The second one takes said representations and transforms it into something else. <br>
+                    As for translation purposes, the Encoder works with the source language and the decoder outputs the translation of the target language.
+                    If the latent representations were generic enough, just by changing the Decoder one could train a Decoder that translated to any possible language.
+                  </p>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="row tm-content-box">
+
+          <div class="column">
+              <div class="tm-basics-text-container">
+                  <img src="diagrams/input.png" style="width:75%" class="arch-center">
+              </div>
+          </div>
+          
+          <div class="column">
+              <div class="tm-basics-text-container">
+                <h2 class="tm-text-primary-arch mb-4">Input set up</h2>
+                  <p class="mb-4 tm-arch-text">
+                    The input received in both parts, the Encoder and the Decoder, is an embedding that represents a token (recall, a part of a word).
+                    As this type of neural network is not recurrent (a type of network that does have a notion of temporarity), to each embedding it is added
+                    some specific weights that will determine the position each token has within the sentence, this is the positional encoding. <br>
+                    To exemplify, we input the English embeddings of the sentence in the Encoder. In the Decoder, we input the translated right shifted embedding of the encoder input. Or easier: the
+                    last embedding we predicted in French. <br>
+                    All in all, for each sentence we generate the tokens, we add the positional information and then they are ready to enter to the Encoder or the Decoder.
+                  </p>
+          </div>
+        </div>
+        </div>
+        </div>
+
+      <div class="mySlides fade">
+        <h2 class="tm-text-primary-arch mb-4">Positional Encoding</h2>
+        <div class="tm-basics-text-container">
+          <div class="row">
+            <div class="column">
+              The weights of the positional encoding can be trained or determined by a function, typically a sinusoidal one. In the paper, said function is the following: <br>
+              <br>
+              <p style="text-align:center;"> 
+                \(PE_{(pos,2i)}=sin(pos/10000^{2i/dmodel})\) <br>
+                \(PE_{(pos,2i+1)}=cos(pos/10000^{2i/dmodel})\)
+              </p>
+              where \(pos\) is the position of the token in the sentence, \(d_{model}\) the dimension of the embeddings and \(i\) represents the position within the embedding.
+              <br>
+              In other words, in this particular case, to each embedding we add weights that come determined by the alternation of a sine and a cosine function (observable at your right) whose 
+              objective is to determine in which position a certain token is found.
+            </div>
+            <div class="column">
+              <div class="tm-basics-text-container">
+                <img src="plots/pe.png" style="width:95%" class="arch-center">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="row tm-content-box">
+
+          <div class="column">
+              <div class="tm-basics-text-container">
+                  <img src="diagrams/Encoder.png" style="width:75%" class="arch-center">
+              </div>
+          </div>
+          
+          <div class="column">
+              <div class="tm-basics-text-container">
+                <h2 class="tm-text-primary-arch mb-4">Encoder</h2>
+                  <p class="mb-4 tm-arch-text">
+                    After having the input embeddings prepared, the source language embeddings enter one by one to the Encoder, which will transform them into some 
+                    latent representation of themselves and will eventually go inside the Decoder. <br>
+                    It is worth mentioning that, unlike recurrent neural networks, the input is just one vector and so we don't have the positional information 
+                    contained in any way, this is why positional encoding is needed. <br>
+                    Both modules contain mainly two blocks: feed forward and attention blocks. In addition, they count with residual connections and normalization steps.
+                    All of them are repeated in a total of N stacks (being N=6). That is, we have 6 times what we see in the diagrams. <br>
+                    This module is the most basic of the two.
+                  </p>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="row tm-content-box">
+          
+            <h2 class="tm-text-primary-arch mb-4">Feed forward blocks</h2>
+              <div class="tm-basics-text-container">
+                As we mentioned, in each module of the architecture, it can be found two main blocks, the first one is the feed forward. They are fully-connected feed-forward networks that 
+                are applied to each position separately and identically. They consist of two feed-forward layers with a ReLU activation in between and
+                the operations equate the behaviour of two convolutions of kernel size 1. <br>
+                <br>
+                <p style="text-align:center;"> 
+                  \(FFN(x) = max(0,xW_1+b_1)W_2+b_2\)
+                </p>
+                After each stack of layers, both in the Encoder and the Decoder, we have a skip connection and a normalization layer. This 
+                helps the network to 'remember' the past and have small values inside the embeddings.
+              </div>
+            <img src="diagrams/feed_forward.png" style="width:90%" class="arch-center">
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="row tm-content-box">
+          <div class="tm-basics-text-container">
+            <h2 class="tm-text-primary-arch mb-4">Attention blocks</h2>
+              <img src="diagrams/multihead_attention.png" style="width:70%" class="arch-center">
+              <p class="mb-4 tm-arch-text">
+                The second main component inside the modules are the Attention blocks. In this paper it is performed a simple
+                attention mechanism (scaled dot-product) which is combined with what it is called heads. This combination of techniques results
+                in Multi-Head Attention. <br>
+                Each block of attention consists of a linear layer, a scale dot-product attention layer, a concatenation step and a final linear layer.
+                Also, one of the blocks (the first found in the Decoder) is referenced as Masked Multi-Head Attention. This is because at that 
+                step we don't have the whole information when predicting, so a mask is applied when training. <br>
+                We will provide more detail in <a href="#attention">Attention</a>.
+              </p>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="mySlides fade">
+        <div class="row tm-content-box">
+
+          <div class="column">
+              <div class="tm-basics-text-container">
+                  <img src="diagrams/Decoder.png" style="width:60%" class="arch-center">
+              </div>
+          </div>
+          
+          <div class="column">
+              <div class="tm-basics-text-container">
+                <h2 class="tm-text-primary-arch mb-4">Decoder</h2>
+                  <p class="mb-4 tm-arch-text">
+                    The decoder architecture is pretty similar to the previous one. In fact, we could say that after the first Attention block and normalization, the architecture is basically the same. <br>
+                    However, the most noticeable differences are the inputs it has. <br>
+                    The first (at the beginning of the Decoder) is the target language embeddings shifted right (as we have already mentioned, the last predicted embedding). <br>
+                    The second one (in the middle of the module), as input of the second Attention block, we pass the Encoder output along with the Decoder embeddings we have at that step. <br>
+                    Also, in here, we have two Attention blocks, the first one being the masked attention block and the second a regular one. <br>
+                    Notice that after the Decoder module we find two final layers, a linear layer and a softmax layer that will be in charge of choosing the most probable translation.
+                  </p>
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="mySlides fade">
+        <h2 class="tm-text-primary-arch mb-4">Full schema</h2>
+        <div class="tm-basics-text-container">
+          <img src="diagrams/whole.png" style="width:75%" class="arch-center">
+        </div>
+      </div>
+
+      </div>
+
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div> 
+
+  <!--slider END-->
+    </section>
+    
+    <section id="attention" class="tm-section-pad-top">
+      <div class="container tm-container-gallery">
+        <div class="row">
+          <div class="text-justify col-12">
+            <div class="text-white col-12"> 
+              <h2 class="tm-text-primary tm-section-title mb-4">Attention</h2>
+                <!--<p class="mx-auto tm-section-desc">-->
+                
+                  <div class="row">
+                    <div class="column">
+                      <p class="mb-4 tm-intro-text">
+                      As we have introduced, attention is in simple words, the mechanism that stablishes the relevance of a token in relationship with another. 
+                      <br> To do so, it is necessary to 
+                      define the three components used: key (K), query (Q) and values (V). Those are vectors that we combine (map) in such a way that produce an output (also a vector) whose values state said relationships. <br>
+                      The output is computed as a weighted sum of the values, where the weight assigned to each value is computed by a compatibility function of the query with the corresponding key. <br>
+                      In other words, K and Q are used to define some weights that will be used against the values to define the importance. 
+                      We have three blocks in the Transformer architecture that perform this evaluation, but first let's describe better what an attention block does.
+                      </p>
+                    </div>
+
+                    <div class="column">
+                      <img src="diagrams/attention_gray.png" style="width:70%" class="arch-center">
+                      <div class="caption">Attention blocks within Transformer architecture</div>
+                    </div>
+                  </div>
+            </div>     
+          </div>            
+        </div>
+
+        <div class="row">
+          <div class="text-justify col-12">
+            <div class="text-white col-12">
+                  <div class="row">
+                    <div class="column">
+                        <img src="diagrams/attention_dark.png" style="width:95%" class="arch-center">
+                        <div class="caption">Attention block</div>
+                    </div>
+                    <div class="column">
+                      <p class="mb-4 tm-intro-text">
+                      The attention itself is computed as follows:
+                      </p>
+                        <img src="diagrams/attention_formula.png" style="width:50%" class="arch-center">
+                      <p class="mb-4 tm-intro-text">
+                        So each of the attention blocks perform the attention computation using the respectives K,Q and V; which come from different sources according to which block we are found. <br>
+                        After performing the softmax, the result is scaled by d_k (the dimension of the embedding) and after it, it is multiplied by V. This way it is ensured that the vectors
+                        we deal with are normalized at each step, a fact that is really helpful to avoid overflows and numeric problems.
+                      </p>
+                    </div>
+                  </div>
+            </div>     
+          </div>       
+
+        
+        </div>
+
+        <div class="row">
+          <div class="text-justify col-12">
+            <div class="text-justify col-12"> 
+              <h2 class="tm-text-primary-attention mb-4"> Types </h2>
+                  <p class="mb-4 tm-intro-text">               
+                    Having all these, one is capable to generate what it is called the attention matrix. One may recall the the architecure of the Transformers, from which we could
+                    extract three attention matrixes (as we have three blocks that compute it). <br>
+                  </p>
+                  <p class="mb-4 tm-intro-text"><b> Self-Attention </b></p>
+                    <ul>
+                      <li>The first block is found in the encoder and uses the source language sentence as K, Q and V. </li>
+                      <li>Therefore, it somehow stablishes relationships among the sentence with itself in the source language, in our case, English.</li>
+                    </ul> 
+
+                  <p class="mb-4 tm-intro-text"><b>Masked self-Attention</b></p>
+                    <ul>
+                      <li>The second block is found in the Decoder. </li>
+                      <li>K, Q and V are the input of the decoder which, remember, is the last output predicted.</li> 
+                      <li> It is called masked because when we predict we don't know the translation so, when training, we mask the future data we are not suposed to see</li>
+                      <li>In other words, this Attention is computed with what we have so far in French.</li>
+                    </ul>
+
+                  <p class="mb-4 tm-intro-text"><b>Encoder-Decoder Attention</b></p>
+                    <ul>
+                    <li>The third and last block is also found in the Decoder.</li>
+                      <li>K and Q are the output of the encoder (therefore, the tokens in the source language, English).</li>
+                      <li>V is the information we have of the decoder up to this point, the shifted right outputs in French.</li>
+                      <li>It is called Encoder-Decoder Attention due to the fact that combines the information of the Encoder (source language) and Decoder (target language), but 
+                      in terms of computations and structure it has no difference with the previous ones.</li>
+                      <li>This might be the most interesting matrix of all three, as it shows the relationships of the words / tokens of the source  and the target language. </li>
+                    </ul>
+                  
+                  <p class="mb-4 tm-intro-text">
+                    Here we introduce real examples of the Self-Attention and Encoder-Decoder Attention matrixes.
+                  </p>
+                  </p>
+                <div class="text-center col-12">
+                  <object width="1056" height="600" data="plots/attention.html"></object>
+                </div>  
+            </div>     
+        </div>  
+        <div class="row">
+          <div class="text-justify col-12">
+            <div class="text-justify col-12"> 
+              <h2 class="tm-text-primary-attention mb-4"> Heads </h2>
+                <p class="mb-4 tm-more-text">
+                    Up to this point, you might be wondering what exactly are heads in terms of Attention and what do they have to do in here. 
+                    Well, conceptually heads are not as easy to explain with a plain example because they are more of a helping 'feature' rather than a palpable thing itself. <br>
+                    Heads is the name assigned to the number of partitions we do to the vector in order to compute attention separately. This allows the segmentation of the attention
+                    calculations and therefore the parallelization of this part of the model. Not only do we focus in smaller parts but also we permit them to be computed in a faster way
+                    that allows a faster trainer. <br>
+                    So it is as simple as dividing the input vectors K, Q, and V into 'head' parts. Then, they follow the same procedure as previously: a linear layer and the scale dot-product.
+                    After it, we just concatenate the 'pieces' and pass through a last linear layer. <br>
+                    In the gif it can be observed the case where the number of heads is 3.
+                    <div class="text-center col-12">
+                      <object style="width:70%" data="diagrams/attention_gif/attention.gif"></object> <br>
+                      
+                      <source src="diagrams/attention_gif/attention.mp4" type="video/mp4">
+                  </div>
+            </div>  
+          </div>     
+        </div>   
+      </div>
+    </section>
+
+      <!-- Training section -->
+      <section id="train" class="tm-section-pad-top">
+        <div class="container tm-container-gallery">
+          <div class="row">
+            <div class="text-white col-12"> 
+              <h2 class="text-white mb-4 tm-section-title">Training</h2>
+                <!--<p class="mx-auto tm-section-desc">-->
+                <p class="mb-4 tm-intro-text">
+                  LOSS
+                  Fine-tune & pretrain
+                  masks, translation, prediction, etc.
+                </p>
+            </div>            
+          </div> 
+        </div>
+      </section>
+
+    <!-- Contact -->
+    <section id="tips" class="tm-section-pad-top tm-parallax-2">
+    
+      <!--<div class="container tm-container-contact">-->
+        <div class="container tm-container-gallery">
+          <div class="row">
+            <div class="text-justify col-12">
+              <h2 class="text-white mb-4 tm-section-title">Details</h2>
+                      <p class="mb-4 tm-basics-text">
+
+                        In this section we provide further detail of some of the concepts already explained, more insight of some structures or elements that are specific for this network or any curiosity or feature that we consider worth mentioning.
+
+                        <!--If the input and the output of the network is desired to be the same, this is called an AutoEncoder, 
+                        in which the latent representation has smaller dimension than the original and the architecture can be used for dimensionality reduction and data compression purposes.
+                        
+                        Special tokens
+
+                        BPE 
+
+                        Label smoothing
+
+                        (!!) Positional Encoding 
+
+                        Beam-->
+
+                      </p><br>
+              
+              <!-- collapsible dropdown-->
+              <button class="accordion">AutoEncoders</button>
+              <div class="panel">
+                <div class="row">
+                  <div class="column">
+                    <img src="diagrams/autoencoder.png" style="width:50%" class="arch-center">
+                  </div>
+                  <div class="column">
+                    <p class="mb-4 tm-basics-text">
+                    <br>
+                    We have learned how does an Encoder-Decoder architecture look like, a really common type of it is the so-called AutoEncoder. 
+                    This type of network is pretty famous and used as it is simple but effective unsupervised method. <br>
+                    It consists of a network that is trained to predict exactly the same as it receives as input. The bottleneck (latent data) is smaller than the initial and final dimension, 
+                    this way we train the autoencoder in such a way that compresses the most relevant information and remains condensed in a lowered-dimension vector than the original. <br>
+                    It is really helpful for compression, image segmentation, face recognition, etc.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <button class="accordion">Special tokens</button>
+              <div class="panel">
+                <br>
+                <p>Special tokens are also a helpful feature to take into account. We have introduced the end-of-sentence tokens used in the paper. However, it is also usual
+                  to find other tokens that do not directly reffer to a word: the beginning of sentence token: &#60bos&#62, 
+                  punctuation signs tokens: &#60apos&#62, &#60,&#62, &#60.&#62, etc; and even a special token for unseen words &#60unk&#62.
+                  These are rather helpful when training or stating the preprocessing of the network.</p>
+              </div>
+              
+              <button class="accordion">BPE</button>
+              <div class="panel">
+                <br>
+                <p>Lorem ipsum...</p>
+              </div> 
+
+              <button class="accordion">Label smoothing</button>
+              <div class="panel">
+                <br>
+                <img src="diagrams/label_smooth.png" style="width:85%" class="arch-center">
+                <br>
+                <p>Label Smoothing is a regularization technique that introduces noise for the labels / target. By doing this we prevent the network to work with absolute zeroes,
+                  hence preventing it from computational issues. It is an easy yet really helpful technique to help the model generalize instead of overfitting by following really
+                  strict patterns which, in the end, are not found in real life / when predicting unknown targets.
+                  As a matter of fact, it is only used in classification problems that use the cross-entropy function.
+                </p>
+              </div> 
+              
+              <button class="accordion">Intuition behind the Positional Encoding</button>
+              <div class="panel">
+                <br>
+                 <p>As we already know, positional encoding is what provides the network with the 'order' information within the words or tokens. Quoting the authors:
+                  "Since our model contains no recurrence and no convolution, in order for the model to make use of the order of the sequence, 
+                  we must inject some information about the relative or absolute position of the tokens in the sequence." <br></p>
+                  
+                  <div class="row">
+                    <div class="column">
+                      <p> However, what do sinusoidal functions have to do with order? <br>
+                      It is all related with the way bits change as they grow. If we observe the change in bits when augmenting the numbers from one to five in binary, we observe the following behaviour. <br>
+                      Somehow this behaves at some level as a sinusoidal movement, here the reason why this type of function is appropiate for this task. </p>
+                    </div>
+                    <div class="column">
+                      <img src="diagrams/bits.png" style="width:25%" class="arch-center">
+                    </div>
+                  </div>
+              </div>
+
+              <button class="accordion">Beam</button>
+              <div class="panel">
+                <br>
+                <p>Lorem ipsum...</p>
+              </div> 
+
+              <button class="accordion">Softmax function</button>
+              <div class="panel">
+                <br>
+                <p>Lorem ipsum...</p>
+              </div> 
+
+              <button class="accordion">Activation functions</button>
+              <div class="panel">
+                <br>
+                <p>Lorem ipsum...</p>
+              </div> 
+
+              <button class="accordion">Convolutions and CNNs</button>
+              <div class="panel">
+                <br>
+                <p>Lorem ipsum...</p>
+              </div> 
+
+              </div><!-- row ending -->
+              
+      </div>
+
+    </section>
+
+
+    <!-- More section -->
+    <section id="more" class="tm-section-pad-top">
+      <div class="container tm-container-gallery">
+        <div class="row">
+          <div class="text-white col-12"> 
+              <h2 class="tm-text-primary tm-section-title mb-4">Learn more</h2>
+              <!--<p class="mx-auto tm-section-desc">-->
+              <p class="mb-4 tm-more-text">
+                The Artificial Intelligence universe is wide and it will soon be infinite, if you are interested in the topic, here you can find a bunch of resources that cover a variety of related work.
+                From more state-of-the-art architectures, to visualizing tools to understand them and social research upon ethics and bias inside NLP.
+              </p>
+          </div>            
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="mx-auto tm-gallery-container">
+                    <div class="grid tm-gallery">
+                      <a href="img/more_transformer.png">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/1.png" alt="Image 1" class="img-fluid">
+                          <figcaption>
+                            <h2><i><span>Original</span> Paper</i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+                      <a href="img/gallery-img-03.jpg">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/6.png" alt="Image 3" class="img-fluid">
+                          <figcaption>
+                            <h2><i>Transformers<span> XAI Paper</span></i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+                      <a href="img/gallery-img-02.jpg">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/2.png" alt="Image 2" class="img-fluid">
+                          <figcaption>
+                            <h2><i>Google's <span> ELMO</span></i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+                      <a href="https://projector.tensorflow.org/" class="item-link">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/3.png" alt="Image 3" class="img-fluid">
+                          <figcaption>
+                            <h2><i><span>Interactive </span> Embeddings</i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+                      <a href="https://www.aclweb.org/anthology/W17-1604/">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/4.png" alt="Image 3" class="img-fluid">
+                          <figcaption>
+                            <h2><i>NLP &<span> Ethics</span></i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+                      <a href="img/gallery-img-03.jpg">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/5.png" alt="Image 3" class="img-fluid">
+                          <figcaption>
+                            <h2><i>Google's <span> Bert</span></i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+                      <a rel="follow" href="https://arxiv.org/abs/2002.03808" class="link">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/7.png" alt="Image 3" class="img-fluid">
+                          <figcaption>
+                            <h2><i> Transformers <span>& voice</span></i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+                      <a rel="follow" href="https://www.washingtonpost.com/opinions/2018/12/17/why-your-ai-might-be-racist/?noredirect=on" class="item-link">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/8.png" alt="Image 3" class="img-fluid">
+                          <figcaption>
+                            <h2><i><span> Racism</span> & AI</i></h2>
+                          </figcaption>
+                        </figure>
+                      </a>
+                      </div>
+                </div>                
+            </div>        
+          </div> 
+      </div>
+
+      <footer class="text-center small tm-footer">
+        <p class="mb-0">
+        Copyright &copy; 2020 Maria Ribalta
+        
+        . <a rel="nofollow" href="https://www.tooplate.com" title="HTML templates">Inspired by TOOPLATE</a></p>
+      </footer>
+     
+    </section>
+
+
+
+    <script src="js/jquery-1.9.1.min.js"></script>     
+    <script src="slick/slick.min.js"></script>
+    <script src="magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="js/easing.min.js"></script>
+    <script src="js/jquery.singlePageNav.min.js"></script>     
+    <script src="js/bootstrap.min.js"></script> 
+    <script>
+
+    // TRICKS - BEG OF COLLAPSIBLE
+    
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active-acc");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null; //null
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px"; 
+        }
+      });
+    }
+
+    //END OF COLLAPSIBLE
+
+    // BEG OF SLIDER
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+        } 
+
+    // END OF SLIDER
+
+      function getOffSet(){
+        var _offset = 450;
+        var windowHeight = window.innerHeight;
+
+        if(windowHeight > 500) {
+          _offset = 400;
+        } 
+        if(windowHeight > 680) {
+          _offset = 300
+        }
+        if(windowHeight > 830) {
+          _offset = 210;
+        }
+
+        return _offset;
+      }
+
+      function setParallaxPosition($doc, multiplier, $object){
+        var offset = getOffSet();
+        var from_top = $doc.scrollTop(),
+          bg_css = 'center ' +(multiplier * from_top - offset) + 'px';
+        $object.css({"background-position" : bg_css });
+      }
+
+      // Parallax function
+      // Adapted based on https://codepen.io/roborich/pen/wpAsm        
+      var background_image_parallax = function($object, multiplier, forceSet){
+        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
+        multiplier = 1 - multiplier;
+        var $doc = $(document);
+        // $object.css({"background-attatchment" : "fixed"});
+
+        if(forceSet) {
+          setParallaxPosition($doc, multiplier, $object);
+        } else {
+          $(window).scroll(function(){          
+            setParallaxPosition($doc, multiplier, $object);
+          });
+        }
+      };
+
+      var background_image_parallax_2 = function($object, multiplier){
+        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
+        multiplier = 1 - multiplier;
+        var $doc = $(document);
+        $object.css({"background-attachment" : "fixed"});
+        
+        $(window).scroll(function(){
+          if($(window).width() > 768) {
+            var firstTop = $object.offset().top,
+                pos = $(window).scrollTop(),
+                yPos = Math.round((multiplier * (firstTop - pos)) - 186);              
+
+            var bg_css = 'center ' + yPos + 'px';
+
+            $object.css({"background-position" : bg_css });
+          } else {
+            $object.css({"background-position" : "center" });
+          }
+        });
+      };
+      
+      $(function(){
+        // Hero Section - Background Parallax
+        background_image_parallax($(".tm-parallax"), 0.30, false);
+        background_image_parallax_2($("#tips"), 0.80);   
+        background_image_parallax_2($("#architecture"), 0.80);   
+        
+        // Handle window resize
+        window.addEventListener('resize', function(){
+          background_image_parallax($(".tm-parallax"), 0.30, true);
+        }, true);
+
+        // Detect window scroll and update navbar
+        $(window).scroll(function(e){          
+          if($(document).scrollTop() > 120) {
+            $('.tm-navbar').addClass("scroll");
+          } else {
+            $('.tm-navbar').removeClass("scroll");
+          }
+        });
+        
+        // Close mobile menu after click 
+        $('#tmNav a').on('click', function(){
+          $('.navbar-collapse').removeClass('show'); 
+        })
+
+        // Scroll to corresponding section with animation
+        $('#tmNav').singlePageNav({
+          'easing': 'easeInOutExpo',
+          'speed': 600
+        });        
+        
+        // Add smooth scrolling to all links
+        // https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+        $("a").on('click', function(event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 600, 'easeInOutExpo', function(){
+              window.location.hash = hash;
+            });
+          } // End if
+        });
+
+        // Pop up
+        $('.tm-gallery').magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          gallery: { enabled: true }
+        });
+
+        $('.tm-architecture-carousel').slick({
+          dots: true,
+          prevArrow: false,
+          nextArrow: false,
+          infinite: false,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2
+              }
+            }, 
+            {
+              breakpoint: 480,
+              settings: {
+                  slidesToShow: 1
+              }                 
+            }
+          ]
+        });
+
+        // Gallery
+        $('.tm-gallery').slick({
+          dots: true,
+          infinite: false,
+          slidesToShow: 5,
+          slidesToScroll: 2,
+          responsive: [
+          {
+            breakpoint: 1199,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+        });
+      });
+
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+              }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+          }
+        }
+      }
+
+    </script> 
+
+<script src="jquery.js"></script> 
+<script> 
+  $(function(){
+    $("#attention_html").load("plots/attention.html")
+  });
+</script> 
+
+  <script>
+    includeHTML();
+  </script> 
+  </body>
+</html>
