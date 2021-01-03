@@ -634,13 +634,90 @@ https://www.tooplate.com/view/2117-infinite-loop
         <div class="container tm-container-gallery">
           <div class="row">
             <div class="text-white col-12"> 
-              <h2 class="text-white mb-4 tm-section-title">Training</h2>
+              <h2 class="text-white mb-4 tm-section-title">Training and Usage</h2>
                 <!--<p class="mx-auto tm-section-desc">-->
-                <p class="mb-4 tm-intro-text">
-                  LOSS
-                  Fine-tune & pretrain
-                  masks, translation, prediction, etc.
+                <p class="text-white mb-4 tm-intro-text">
+                  
+                It's time to talk a little bit of the software part of the network. We are going to review, in general terms, which is the loss function, how the problem is 
+                presented and some details that might be taken into account when building and training such a neural network.
+
+                  
+                <h2 class="tm-text-primary-train mb-4"> Loss function </h2>
+                
+                <p class="text-white mb-4 tm-intro-text">
+                The loss function that is minimized is known as the Cross Entropy Loss and is defined as follows:
                 </p>
+                
+                <p style="text-align:center;"> 
+                    \( FORMULA LOSS \) 
+                  </p>
+                
+                  <p class="text-white mb-4 tm-intro-text">
+                It is a loss exclussively for classification problems and, as it can be seen, it is generalized to any number of classes one may desire. It is really useful and suitable for 
+                classification problems, as it penalizes more the wrong predictions than other losses would do. Let's show it with an example:
+                </p>
+                
+                <h2 class="tm-text-primary-train mb-4"> Masks and prediction </h2>
+                <p class="text-white mb-4 tm-intro-text">
+                We have already talked about masks. Masks is a special token that replaces a token in a way that the neural network 'does not take it into account'. By this we mean that if a token 
+                is replaced by the token &#60mask&#62, the Transformer will have no information on that so it would work as it wasn't there.
+                Masks are used during training in the first Decoder Attention Block as we have seen in the <a href="#architecture">Architecture</a>
+                However, masks are applied in many tasks of NLP, for instance, when training a next-word-prediction network, the future words are masked so that the network doesn't cheat.
+                </p>
+                
+                
+                <h2 class="tm-text-primary-train mb-4"> Do It Yourself</h2>
+                <p class="text-white mb-4 tm-intro-text">
+                You can train from scratch, take into account: choose dimensions, data preprocessing (tokenization, case sensitivity)
+                You can take a pretrained network and fine-tune. The library hugging-face helps.
+
+                One of the advantages of the Transformers is that they are suitable for many tasks and contexts, typically for NLP, even though it can be used outside the language processing field. <br>
+                Due to the outstanding results it provided, many different architectures and varieties arise since the publication of the original paper in 2017. </p>
+                </p>
+                <!--Here we have used the transformer to translate from English to French. Needless to say, having a proper dataset in any other language would be enough to train a translator to said language.
+                    Nonetheless, translation is not the only task that this type of architecture can perform. Among the possibilities we can train transformers to:-->
+                    
+
+                <div class="row">
+                  <div class="third_column">
+                    <i class="fas fa-3x fa-people-carry text-center tm-icon-train"></i> 
+                    <h2 class="tm-text-primary-train-center mb-4">Tasks</h2>
+                    <ul class='ul'>
+                      <li class='li-train'> Next-sentence prediction </li>
+                      <li class='li-train'> Question answering </li>
+                      <li class='li-train'> Reading comprehension </li>
+                      <li class='li-train'> Sentiment analysis </li>
+                      <li class='li-train'> Paraphrasing </li>                  
+                    </ul>
+                  
+                  </div>
+                  <div class="third_column">
+                    <i class="far fa-3x fa-edit text-center tm-icon-train"></i> 
+                    <h2 class="tm-text-primary-train-center mb-4">Applications</h2>
+                    <ul>
+                      <li class='li-train'>Machine translation </li>
+                      <li class='li-train'> Document summarization </li>
+                      <li class='li-train'> Document generation </li>
+                      <li class='li-train'> Named entity recognition </li>
+                      <li class='li-train'> Niological sequence analysis</li>
+                    </ul>
+                    
+                  </div>
+                  <div class="third_column">
+                    <i class="fas fa-3x fa-cogs text-center tm-icon-train"></i> 
+                    <h2 class="tm-text-primary-train-center mb-4">Architectures</h2>
+                    <ul>
+                      <li class='li-train'> GPT-3 </li> 
+                      <li class='li-train'> GPT-2 </li>
+                      <li class='li-train'> BERT </li>
+                      <li class='li-train'> XLNet </li>
+                      <li class='li-train'> RoBERTa </li>
+                      <li class='li-train'> Distilled BERT</li>
+                    </ul>
+                    
+                  </div>
+                </div>
+              
             </div>            
           </div> 
         </div>
@@ -658,19 +735,6 @@ https://www.tooplate.com/view/2117-infinite-loop
 
                         In this section we provide further detail of some of the concepts already explained, more insight of some structures or elements that are specific for this network or any curiosity or feature that we consider worth mentioning.
 
-                        <!--If the input and the output of the network is desired to be the same, this is called an AutoEncoder, 
-                        in which the latent representation has smaller dimension than the original and the architecture can be used for dimensionality reduction and data compression purposes.
-                        
-                        Special tokens
-
-                        BPE 
-
-                        Label smoothing
-
-                        (!!) Positional Encoding 
-
-                        Beam-->
-
                       </p><br>
               
               <!-- collapsible dropdown-->
@@ -684,7 +748,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                     <p class="mb-4 tm-basics-text">
                     <br>
                     We have learned how does an Encoder-Decoder architecture look like, a really common type of it is the so-called AutoEncoder. 
-                    This type of network is pretty famous and used as it is simple but effective unsupervised method. <br>
+                    This type of network is pretty famous and used as it is a simple but effective unsupervised method. <br>
                     It consists of a network that is trained to predict exactly the same as it receives as input. The bottleneck (latent data) is smaller than the initial and final dimension, 
                     this way we train the autoencoder in such a way that compresses the most relevant information and remains condensed in a lowered-dimension vector than the original. <br>
                     It is really helpful for compression, image segmentation, face recognition, etc.
@@ -718,7 +782,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                 <br>
                 <p>Label Smoothing is a regularization technique that introduces noise for the labels / target. By doing this we prevent the network to work with absolute zeroes,
                   hence preventing it from computational issues. It is an easy yet really helpful technique to help the model generalize instead of overfitting by following really
-                  strict patterns which, in the end, are not found in real life / when predicting unknown targets.
+                  strict patterns which, in the end, are not found in real life or when predicting unknown targets.
                   As a matter of fact, it is only used in classification problems that use the cross-entropy function.
                 </p>
               </div> 
@@ -733,8 +797,8 @@ https://www.tooplate.com/view/2117-infinite-loop
                   <div class="row">
                     <div class="three_quarter_column">
                       <p> However, what do sinusoidal functions have to do with order? <br>
-                      It is all related with the way bits change as they grow. If we observe the change in bits when augmenting the numbers from one to five in binary, we observe the following behaviour. <br>
-                      Somehow this behaves at some level as a sinusoidal movement, here the reason why this type of function is appropiate for this task. </p>
+                      It is all related with the way bits change as they grow. If we observe the change in bits when augmenting the numbers from one to five in binary, we observe the behaviour found in the right. <br>
+                      Somehow, every time we increase a number, this behaves at some level as a sinusoidal movement, here the reason why this type of function is appropiate for this task. </p>
                     </div>
                     <div class="quarter_column">
                       <img src="diagrams/bits.png" style="width:50%" class="arch-center">
@@ -753,9 +817,9 @@ https://www.tooplate.com/view/2117-infinite-loop
                 <br>
                 <p>As this projects intends to understand the overall ideas and intuitions behind the transformer rather than digging into the details, we have avoided as much as possible 
                   mentioning dimensions and numbers. Furthermore, they have many different factors that can affect them (the type of architecture, the structure of it, the way one may want to train the model,
-                  the size of the data, the resources available, etc). However, there is one dimension that is interestingt in this type of task and does not always appear explained. The Beam dimension. <br><br>
+                  the size of the data, the resources available, etc). However, there is one dimension that is interesting and useful in this type of task and does not always appear explained: the Beam dimension. <br><br>
                   We could define the beam dimension as the hypothesis dimension we allow the model to investigate. As we already mentioned, the input of the Decoder is the last output and it can drag error.
-                  That is why the network takes the top Beam most probable words to be the translation, predicts each of the B most probable next words / tokens and keeps, from the Beam first hypothesized words, the one that provides less error. This is repeated at each step.
+                  That is why the network takes the top B most probable words to be the translation (being B the Beam dimension), predicts each of the B most probable next words / tokens and keeps, from the B first hypothesized words, the one that provides less error. This is repeated at each step.
                   <br> <br>
                   An example, if we want to translate our already known base sentence: 'My mum eats a carrot'. We start the process, our Beam dimension is 2, for the first word we hypothesize the translation to be 'ma' and 'mon'. The network will translate the following word taking into account 
                   both articles: 'ma mère' and 'mon mère' and will conclude that, based on the error, 'ma' is a better prediction.
@@ -771,7 +835,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                   <p style="text-align:center;"> 
                     \( softmax(x_{i}) = \displaystyle{\frac{\exp(x_i)}{\sum_j \exp(x_j)}}\)
                   </p>
-                  The softmax function tries to replicate the behaviour of the maximum function, however, as computing the maximum is not a differentiable function 
+                  The softmax function tries to replicate the behaviour of the maximum function. However, as computing the maximum is not differentiable,
                   it would not be possible for the network to propagate the gradients through it (plainly, we couldn't train the network as it would not update the weights).
                   For this reason a differentiable function that simulates the maximum is good enough; and it is called 'soft' as we still preserve a part of the non-maximum labels.
                 </p>
@@ -780,7 +844,7 @@ https://www.tooplate.com/view/2117-infinite-loop
               <button class="accordion">Activation functions</button>
               <div class="panel">
                 <br>
-                <p>Activation functions determine if a Neuron will be 'activated' according to the value it has received. In this architecture we have seen the ReLU activation,
+                <p>Activation functions determine if a neuron will be 'activated' according to the value it has received. In this architecture we have seen the ReLU activation,
                   which is the abbreviation for Rectified Linear Unit. This function activates the neuron in case the input received is higher than 0, that is: </p>
                   <p style="text-align:center;"> 
                     \( ReLU(x) = max(0, x) \)
@@ -798,8 +862,10 @@ https://www.tooplate.com/view/2117-infinite-loop
                   <p style="text-align:center;"> 
                     \( y(t) = x(t) * h(t) = \displaystyle{ (x*h)(t):=\int _{-\infty }^{\infty }x(\tau )h(t-\tau )\,d\tau }\)
                   </p>
-                <p> It has many uses and applications, even in Deep Learning. Long story short, convolutional Neural Networks (CNNs) use  the signal h 
-                  as weights to be trained and nowadays they are one of the best networks to use in image and video recognition, image classification, etc.
+                <p> Being \(y(t)\) the convolution result, \(x(t)\) the signal and \(h(t)\) the kernel. <br>
+                  It has many uses and applications, even in Deep Learning. Long story short, convolutional Neural Networks (CNNs) use  the signal /(h(t) \)
+                  as weights to be trained. Nowadays, they are one of the best networks to use in image and video recognition, image classification, etc. And as we have already 
+                  pointed out, the linear layer block weights act as a convolution of kernel size 1.
                 </p>
               </div> 
 

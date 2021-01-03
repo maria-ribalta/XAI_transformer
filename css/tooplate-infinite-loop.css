@@ -288,6 +288,7 @@ blockquote {
   color: #333; /*#37A;*/
 }
 
+
 .tm-continue {
 	padding: 20px 0 30px 0;
 }
@@ -491,6 +492,11 @@ li {
   padding: 5px;
 }
 
+.third_column {
+  flex: 33%;
+  padding: 20px;
+}
+
 
 .quarter_column {
   flex: 25%;
@@ -650,10 +656,11 @@ figure.effect-honey:hover h2 i {
 	background-color: #222;
   /*background-image: url(../img/neural.jpg); url(../img/infinite-loop-01.jpg);*/
   background-repeat: no-repeat;
-  height: 100vh;
+  height: auto;
   min-height: 375px;
   position: relative;
 }
+
 
 @media (min-height: 600px) and (min-width: 1920px) {
   #train {
@@ -721,6 +728,26 @@ figure.effect-honey:hover h2 i {
   .tm-intro-next-train {
     bottom: 20px;
   }
+}
+
+
+.tm-text-primary-train {
+  color: white; /*#37A;*/
+}
+
+.tm-text-primary-train-center {
+  color: white; /*#37A;*/
+  text-align: center;
+}
+
+.tm-icon-train {
+  display: block;
+  color: white;
+}
+
+
+.li-train{
+  color: white;
 }
 
 
