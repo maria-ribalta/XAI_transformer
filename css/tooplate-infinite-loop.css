@@ -157,7 +157,7 @@ blockquote {
 
 #XAI {
 	background-color: #222;
-  background-image: url(../img/neural.jpg); /*url(../img/infinite-loop-01.jpg);*/
+  background-image: url(../img/home.jpg); /*url(../img/infinite-loop-01.jpg);*/
   background-repeat: no-repeat;
   height: 100vh;
   min-height: 375px;
@@ -227,37 +227,6 @@ blockquote {
   right: 0;
 }
 
-/*
-@media (max-height: 480px) {
-  .tm-hero-text-container-inner {
-    margin-top: -40px;
-  }
-
-  .tm-intro-next {
-    bottom: 20px;
-  }
-}
-
-.tm-down-arrow-link {
-  display: block;
-  margin-top: 18%;
-}
-
-.tm-down-arrow {
-  	color: #FFF;
-    cursor: pointer;
-    background: #357;
-    padding: 15px 40px;
-    transition: all 0.3s ease;
-}
-
-.tm-down-arrow:hover,
-.tm-down-arrow:focus {
-  color: #FFF;
-  background: #37A;
-  padding: 20px 50px;
-}
-*/
 
 /* Introduction */
 
@@ -365,7 +334,7 @@ img{
 
 #architecture {
   color: #333;
-  background-image: url(../img/trial_wb_blurr.jpg);
+  background-image: url(../img/architecture.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -374,7 +343,7 @@ img{
 
 @media (max-width: 991px) {
   #architecture {
-    background-image: url(../img/trial_wb_blurr_mobile.jpg);
+    background-image: url(../img/architecture_mobile.jpg);
   }
 }
 
@@ -779,9 +748,9 @@ figure.effect-honey:hover h2 i {
 #tips {
   color: white;
   background-color: #001828;
-  background-image: url(../img/details_bw.png);
+  background-image: url(../img/details.png);
   background-position: center;
-  /*background-repeat: no-repeat;*/
+  background-repeat: no-repeat;
   min-height: 980px;
   position: relative;
   padding-bottom: 50px;
