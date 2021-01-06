@@ -121,7 +121,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                           <h2 class="tm-text-primary mb-4">State-of-the-art</h2>
                           <p class="mb-4 tm-intro-text">
                             The paper achieved a never-seen-before results in the field, improving all the previous performances previously reached.
-                            It combined some of the best approaches until then: seq2seq processing, attention mechanism and Encoder-Decoder architectures.</p>
+                            It combined some of the best approaches until then: a seq-to-seq model, attention mechanisms and Encoder-Decoder architectures.</p>
                       </div>
                   </div>
                   
@@ -134,7 +134,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                           <h2 class="tm-text-primary mb-4">Simplicity</h2>
                           <p class="mb-4 tm-intro-text">
                             Up until that moment, the best approaches used a great variety of complex methods and architectures to achieve 
-                            good results. Convolutional neural networks (CNNs), complex recurrent neural networks such as LSTMs, etc.</p>
+                            good results. Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs) such as LSTMs, etc.</p>
                       </div>
                   </div>
   
@@ -150,7 +150,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                         <h2 class="tm-text-primary mb-4">Attention</h2>
                         <p class="mb-4 tm-intro-text">
                           The attention mechanism allows the NN to understand the sequence of words in a way similar to what we humans do, 
-                          permitting distinction between relevant and irrelevant words inside of it</p>
+                          permitting distinction between relevant and irrelevant words inside of it.</p>
                     </div>
                 </div>
                 
@@ -163,7 +163,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                         <h2 class="tm-text-primary mb-4">Velocity</h2>
                         <p class="mb-4 tm-intro-text">
                           The Encoder-Decoder architecture alongside with the multi-head attention implementation, 
-                          allows enough parallelization to have a quality model in 12h with P100 GPUs</p>
+                          allows enough parallelization to have a quality model in 12h with P100 GPUs.</p>
                     </div>
                 </div>
 
@@ -191,7 +191,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                         <p class="mb-4 tm-intro-text">
                       The attention mechanism, the positional encoding and the skip connections allow 
                       to know where in the sentence we are and not forget to what we have seen without overflowing 
-                      the model or leading to exploding gradients due to long sentences</p>
+                      the model or leading to exploding gradients due to long sentences.</p>
                           <!--
                           <div class="tm-continue">
                             <a href="#architecture" class="tm-intro-text tm-btn-primary">Details</a>
@@ -206,13 +206,15 @@ https://www.tooplate.com/view/2117-infinite-loop
                 <div class="tm-intro-text-container">
                   <h2 class="tm-text-primary mb-4 tm-section-title">How? </h2>                
                     <p class="mb-4 tm-intro-text">
-                     All in all, we count with a very powerful tool to develop our Deep Learning projects. Despite of it, it is essential to understand the background and have a good 
-                     knowledge on how this works and runs behind it. <br>
-                     In this project we partake the Explainable AI in order to comprehend the basis of the Transformers, so anyone who is interested on the theme can expand their knowledge 
-                     via visualization and interaction. <br>
-                     All the results and visualizations shown have been extracted from the usage of a real transformer executing a translation task from English to French. The network used is the winner of the <a href="https://arxiv.org/pdf/1706.03762.pdf">ACL 2014 ninth workshop
-                     on statistical machine translation</a>, also described in <a href="https://arxiv.org/abs/1806.00187">Scaling Neural Machine Translation</a>. 
-                    
+                     All in all, Transformers are a very powerful tool to develop Deep Learning projects. Despite of it, it is essential to understand the background and have a good 
+                     knowledge on how this works and runs internally. <br>
+                     In this project we approach to Explainable AI in order to comprehend the basis of the Transformers, so anyone who is interested on the theme can expand their notions on the theme 
+                     via visualization and interaction. <br> <br>
+                     All the results and visualizations shown have been extracted using a real transformer and the task we will focus on is Translation, concretely from English to French. Nonetheless, 
+                     Transformers are also suitable to perform <strong>language modeling</strong>. <br>
+                    The network used is pretrained with the  <a href="https://arxiv.org/pdf/1706.03762.pdf">ACL 2014 ninth workshop
+                     on statistical machine translation dataset</a> and no fine-tuning has been applied. The details on the network and the implementation are described in <a href="https://arxiv.org/abs/1806.00187">Scaling Neural Machine Translation</a> 
+                     and the source code is available in the <a href="https://github.com/pytorch/fairseq">transformer.wmt14.en-fr fairseq Github repository</a>.                
 
                     </p>
                   </div><!-- row ending -->
@@ -232,8 +234,8 @@ https://www.tooplate.com/view/2117-infinite-loop
                 <h2 class="text-white mb-4 tm-section-title">Basic Notions</h2>
                 <p class="mb-4 tm-basics-text">
                   Before we begin, we will clarify some basic notions that will help to understand how the Transformer works and how does it achieve the results it does. To do so, we will
-                  cover all the mechanisms it applies to interpret the natural language the way humans do. All along, we will cover the steps by using analogies with the sentence
-                  'My mum eats a carrot'.
+                  cover up the most important mechanisms it applies to interpret the natural language the way humans do. All along, we will follow the steps by using analogies with the sentence
+                  <strong>My mum eats a carrot</strong>.
                 </p>
               </div>
             </div><!-- title -->
@@ -242,14 +244,15 @@ https://www.tooplate.com/view/2117-infinite-loop
                 <div class="col-sm-6">
                   <div class="tm-basics-text-container">
                     <img src="diagrams/seq2seq.png" style="width:75%" class="arch-center">
+                    <div class="caption">Seq-to-One vs. Seq-to-Seq</div>
                   </div>
                 </div>
 
                 <div class="col-sm-6">
                   <div class="tm-basics-text-container">
-                      <h2 class="tm-text-primary-basics mb-4">Seq2Seq</h2>
+                      <h2 class="tm-text-primary-basics mb-4">Seq-to-Seq</h2>
                       <p class="mb-4 tm-basics-text">
-                        Seq-to-Seq is the abbreviation of sequence-to-sequence, which is the characteristic that indicates that a model is trained with sequences of data (rather than 
+                        Seq-to-Seq (also known as Seq2Seq) is the abbreviation of sequence-to-sequence, which is the characteristic that indicates that a model is trained with sequences of data (rather than 
                         single units) and transforms them into another sequence in some other domain. In a machine translation context, this means that the algorithm works with a sequence of language units from the source language (English in our case) and 
                         translates the whole sequence into the target language (French).
                   </div>
@@ -263,16 +266,16 @@ https://www.tooplate.com/view/2117-infinite-loop
                     <div class="tm-basics-text-container">
                         <h2 class="tm-text-primary-basics mb-4">Embeddings</h2>
                         <p class="mb-4 tm-basics-text">
-                          A word embedding is the representation of the natural language in form of a vector of real numbers. <br>
-                          For instance, an embedding could be a vector of 26 numbers where each of them would be a letter of the alphabet and the quantity of such letter it is found in a certain word.
-                          However, embeddings tend to be more complex, as using this last example the embedding for coin and icon would be the exact same.
+                          An embedding is the representation of some unit of the natural language in the form of a vector of real numbers. <br>
+                          For instance, an embedding could be a vector of 26 numbers where each of them represented the i-th letter of the alphabet and the quantity of the times such letter was found in a certain word.
+                          However, embeddings tend to be more complex than this last example in which <strong>coin</strong> and <strong> icon </strong> would provide the same representation and that would be problematic.
                           Recall that the vector represents the structure of the language we choose, not necessarily words: they could represent a letter, part of a word, a word or a whole sentence itself.
                           Although, the most common is for them to be a word or part of it.</p>
                     </div>
                 </div>
                 
                 <div class="col-sm-6">
-                  <p class="mb-4 tm-basics-text-plot"> \(\to\) See the difference between the embeddings of the words of different sentences and their subtraction</p>
+                  <p class="mb-4 tm-basics-text-plot"> \(\to\) See the difference between the embeddings of the words of different sentences and the subtraction of the sentences' embeddings</p>
                     <div class="tm-basics-text-container">
                       <object width="2000" height="360" data="plots/embeddings.html"> </object>
                       <div class="caption">First 150 values of real embeddings of dimension 1024</div>
@@ -296,10 +299,11 @@ https://www.tooplate.com/view/2117-infinite-loop
                     <div class="tm-basics-text-container">
                       <h2 class="tm-text-primary-basics mb-4">Tokens</h2>
                       <p class="mb-4 tm-basics-text">
-                        In the Transformer architecture, each embedding represents a word token. It is any representation of a fragment of the natural language, which can be either a whole word or a fragment of it depending on several aspects: 
-                        the algorithm of tokenization it is chosen, the frequency it has on the language and if some encoding is applied, the semantical meaning they provide, etc. <br>
-                        In this case, each token is a part of a word or a word itself, punctuation signs count with an own token (commas, apostrophes, etc) and a special one (&#60eos&#62) is used to indicate end of sentence. <br>
-                        Therefore the relationship between tokens and words is not linear, as it can be appreciated on the example.
+                        In this Transformer architecture, each embedding represents a part of the word. The tokenization found depends on several aspects:
+                        the algorithm of tokenization chosen, the frequency it has on the language and the encoding that is applied. <br>
+                        In addition, in this case, punctuation signs count with an own token (commas, apostrophes, etc) and a special one (&#60eos&#62) is used to indicate end of sentence. However, we 
+                        insist that this is characteristic of the chosen architecture and, thus, not a generalized or standard processing of the words.<br>
+                        One rapidly sees that the relationship between tokens and words is not linear, as it can be appreciated on the example.
                     </div>
                 </div>
 
@@ -311,10 +315,9 @@ https://www.tooplate.com/view/2117-infinite-loop
                     <h2 class="tm-text-primary-basics mb-4">Attention</h2>
                     <p class="mb-4 tm-basics-text">
                     The attention mechanism permits the network to identify which tokens are more related between them. In human terms, it is the 
-                  intuition that tells you that what is eaten is the fish and who eats it is my mum. Mathematically, this is more abstract and harder to explain but 
-                the base of all is the scaled dot-product attention shown. We will dig into detail in <a href="#attention">Attention</a>.<br>
-                We will see that the Transformers uses what is called as multi-head attention and that there will be two types of it, encoder-decoder attention and self-attention.
-                <br> Each of them is specific on either the Encoder part of the architecture or the Decoder.
+                  intuition that tells you that what is eaten is the carrot and who eats it is my mum. Mathematically, this is more abstract and harder to explain but 
+                the base of all is the scaled dot-product attention and three specific vectors K, Q and V (shown on the right). We will dig into detail in <a href="#attention">Attention</a>.<br>
+                We will also see that the Transformer uses what is called  <strong>multi-head attention</strong> and its types.
               </p>
                   </div>
               </div>
@@ -341,12 +344,12 @@ https://www.tooplate.com/view/2117-infinite-loop
                 <div class="tm-basics-text-container">
                   <h2 class="tm-text-primary-basics mb-4"> Positional encoding </h2>
                   <p class="mb-4 tm-basics-text">
-                    We have seen how the neural network identifies a word and how it relates their meanings, but how does it determine the order of the words? 
+                    We have seen how the Neural Network identifies a word and how it relates their meanings, but how does it determine the order of the words? 
                     Because obviously, saying 'My mum eats a carrot' is not the same as 'A carrot eats my mum'. <br>
-                    This is achieved thanks to what we call positional encoding, a vector of the same dimension as the embeddings that somehow contains information about the position 
-                  of the token within a sentence. Said vectors can be trained weights (optimized during the training step) or pre-defined functions that work well enough. In the transformer,
-                the autors tried both methods using a mix of sinusoidal functions for the latter one, which they kept as the results were pretty similar with both techniques.
-              A thorough explanation is found in <a href="#tips">Details</a>.</p>
+                    This is achieved thanks to what we call <strong>positional encoding</strong>, a vector of the same dimension as the embeddings that somehow contains information about the position 
+                    of the token within a sentence. Said vectors can be trained weights (optimized during training) or pre-defined functions that work well enough. In the transformer,
+                    the autors tried both methods using a mix of sinusoidal functions for the latter one, which they kept, as the results were pretty similar with both techniques.
+                    <!--A thorough explanation is found in <a href="#architecture">Architecture</a> and <a href="#tips">Details</a>.</p>-->
                 </div>
             </div>
           </div>
@@ -356,15 +359,15 @@ https://www.tooplate.com/view/2117-infinite-loop
                 <div class="tm-basics-text-container">
                   <h2 class="tm-text-primary-basics mb-4">Residual connections</h2>
                   <p class="mb-4 tm-basics-text">
-                  Also known as skip connections or skip-layer connections are those steps in which a tensor is copied and ommits one ore more layers and then it is used at the output of a posterior layer. There, it can be concatenated or added, in here it is the latter case. <br>
-                They are useful to avoid vanishing gradient problems and they act in such a way that the network does not 'forget' the past as easily, allowing the model to perform better. 
-              As we will see in the architecture, the Transformer counts with several of them and are important to achieve the results it has. For instance,
-              positional information does not get lost or vanished due to the residual connections.</p>
+                  Also known as skip connections or skip-layer connections, are those steps in which a vector is copied and ommits one ore more layers and then it is used at the output of a posterior layer along with the output itself. There, it can be concatenated or added.  <br>
+                  They are useful to avoid vanishing gradient problems and they act in such a way that the network does not 'forget' the past as easily, allowing the model to perform better. 
+                  As we will see in the architecture, the Transformer counts with several of them and are important to achieve the results it has. For instance,
+                  positional information does not get lost or vanished due to the residual connections.</p>
                 </div>
             </div>
             <div class="col-sm-6">
               <div class="tm-basics-text-container">
-                <img src="diagrams/skip-con.png" style="width:60%" class="arch-center">
+                <img src="diagrams/skip-con.png" style="width:70%" class="arch-center">
                 <div class="caption">Diagram of skip connections</div>
               </div>
           </div>
@@ -428,7 +431,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                 <h2 class="tm-text-primary-arch mb-4">Input set up</h2>
                   <p class="mb-4 tm-arch-text">
                     The input received in both parts, the Encoder and the Decoder, is an embedding that represents a token (recall, a part of a word).
-                    As this type of neural network is not recurrent (a type of network that does have a notion of temporarity), to each embedding it is added
+                    As this type of Neural Network is not recurrent (a type of network that does have a notion of temporarity), to each embedding it is added
                     some specific weights that will determine the position each token has within the sentence, this is the positional encoding. <br>
                     To exemplify, we input the English embeddings of the sentence in the Encoder. In the Decoder, we input the translated right shifted embedding of the encoder input. Or easier: the
                     last embedding we predicted in French. <br>
@@ -479,7 +482,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                   <p class="mb-4 tm-arch-text">
                     After having the input embeddings prepared, the source language embeddings enter one by one to the Encoder, which will transform them into some 
                     latent representation of themselves and will eventually go inside the Decoder. <br>
-                    It is worth mentioning that, unlike recurrent neural networks, the input is just one vector and so we don't have the positional information 
+                    It is worth mentioning that, unlike recurrent Neural Networks, the input is just one vector and so we don't have the positional information 
                     contained in any way, this is why positional encoding is needed. <br>
                     Both modules contain mainly two blocks: feed forward and attention blocks. In addition, they count with residual connections and normalization steps.
                     All of them are repeated in a total of N stacks (being N=6). That is, we have 6 times what we see in the diagrams. <br>
@@ -709,7 +712,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                 <p class="text-white mb-4 tm-intro-text">
                   
                 It's time to talk a little bit of the software part of the network. We are going to review, in general terms, which is the loss function, how the problem is 
-                presented and some details that might be taken into account when building and training such a neural network.
+                presented and some details that might be taken into account when building and training such a Neural Network.
 
                   
                 <h2 class="tm-text-primary-train mb-4"> Loss function </h2>
@@ -730,7 +733,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                 
                 <h2 class="tm-text-primary-train mb-4"> Masks and prediction </h2>
                 <p class="text-white mb-4 tm-intro-text">
-                We have already talked about masks. Masks is a special token that replaces a token in a way that the neural network 'does not take it into account'. By this we mean that if a token 
+                We have already talked about masks. Masks is a special token that replaces a token in a way that the Neural Network 'does not take it into account'. By this we mean that if a token 
                 is replaced by the token &#60mask&#62, the Transformer will have no information on that so it would work as it wasn't there.
                 Masks are used during training in the first Decoder Attention Block as we have seen in the <a href="#architecture">Architecture</a>
                 However, masks are applied in many tasks of NLP, for instance, when training a next-word-prediction network, the future words are masked so that the network doesn't cheat.
@@ -984,51 +987,60 @@ https://www.tooplate.com/view/2117-infinite-loop
               </p>
           </div>            
         </div>
-
       
         <div class="row_more">
           <div class="column_more"> 
             <div class="box">  
-              <img id="image-3" src="img/1.png"/>  
+              <img id="image-3" src="img/1.png"/> 
+              <a href="https://arxiv.org/abs/1706.03762" class="item-link">  
               <span class="caption fade-caption">  
-              <h3>Original Paper</h3>  
-              <p>Attention is all you need (2017)</p>  
+                <h3>Original Paper</h3> <br>
+                <p>Attention is all you need (2017)</p>  
               </span>  
+              </a>
             </div>         
           </div>
           <div class="column_more"> 
             <div class="box">  
-              <img id="image-3" src="img/3.png"/>  
+              <img id="image-3" src="img/2.png"/>  
               <span class="caption fade-caption">  
-              <h3>Viz is all you need</h3>  
+              <h3>Visualization is all you need</h3>  
               <p>The paper behind this project</p>  
               </span>  
             </div>         
           </div>
           <div class="column_more"> 
             <div class="box">  
+              <img id="image-3" src="img/3.png"/>
+              <a href="https://arxiv.org/abs/1810.04805" class="item-link">  
+              <span class="caption fade-caption">  
+                <h3>Bert</h3>  
+                <p>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)</p>  
+              </span>
+              </a> 
+            </div>         
+          </div>
+          <div class="column_more"> 
+            <div class="box">  
+              <img id="image-3" src="img/4.png"/>
+              <a href="https://www.youtube.com/watch?v=66TgH0YV4eA" class="item-link">  
+                <span class="caption fade-caption">  
+                  <h3>Visualization Best Practices for Explainable AI</h3>  
+                  <p>Videoconference to know more about XAI</p>  
+                </span> 
+              </a> 
+            </div>         
+          </div>
+          <div class="column_more"> 
+            <div class="box">  
               <img id="image-3" src="img/5.png"/>  
-              <span class="caption fade-caption">  
-              <h3>Bert</h3>  
-              <p>Transformers in NLP</p>  
-              </span>  
-            </div>         
-          </div>
-          <div class="column_more"> 
-            <div class="box">  
-              <img id="image-3" src="img/4.png"/>  
-              <span class="caption fade-caption">  
-              <h3>Bias</h3>  
-              <p>Language bias inside Deep Learning</p>  
-              </span>  
-            </div>         
-          </div>
-          <div class="column_more"> 
-            <div class="box">  
-              <img id="image-3" src="img/9.png"/>  
-              <span class="caption fade-caption">  
-                <h3>XAI best practices</h3>  
-                <p>overleaf</p>  
+              <a href="https://www.nature.com/articles/s42256-019-0105-5.epdf?shared_access_token=5NdesGgrExhcnuTJRe8DNdRgN0jAjWel9jnR3ZoTv0NEudUkYwGyjqChcABtnX-6eKbIMBVbpkj9zwX9KiOaMQVcC8y1K81Jl_1-07XWNIqFe_Bwm2zoUm06O12CThusfZ938gKciIC-qMvrbtNvOg%3D%3D" class="item-link">  
+                <span class="caption fade-caption">  
+                  <h3>Gender bias in AI</h3>  
+                  <p>An analysis of gender bias studies in natural language processing</p>  
+                </span> 
+              </a> 
+              </a>
             </div>         
           </div>
         </div>
@@ -1036,50 +1048,60 @@ https://www.tooplate.com/view/2117-infinite-loop
           <div class="column_more"> 
             <div class="box">  
               <img id="image-3" src="img/6.png"/>  
-              <span class="caption fade-caption">  
-              <h3>XAI</h3>  
-              <p>Explainable Artificial Intelligence</p>  
-              </span>  
-            </div>         
-          </div>
-          <div class="column_more"> 
-            <div class="box">  
-              <img id="image-3" src="img/2.png"/>  
-              <span class="caption fade-caption">  
-              <h3>Elmo</h3>  
-              <p>A NN that works with NLP too. CHANGE</p>  
-              </span>  
+              <a href="https://arxiv.org/pdf/1802.05365.pdf" class="item-link">  
+                <span class="caption fade-caption">  
+                  <h3>ELMo</h3>  
+                  <p>Deep contextualized word representations (2018)</p>  
+                </span>
+              </a> 
             </div>         
           </div>
           <div class="column_more"> 
             <div class="box">  
               <img id="image-3" src="img/7.png"/>  
-              <span class="caption fade-caption">  
-              <h3>Voice</h3>  
-              <p>Transformers for voice processing</p>  
-              </span>  
+              <a href=" https://projector.tensorflow.org/" class="item-link">  
+                <span class="caption fade-caption">  
+                  <h3>Embeddings viz</h3>  
+                  <p>Interactive embeddings projections</p>  
+                </span>
+              </a> 
+            </div>         
+          </div>
+          <div class="column_more"> 
+            <div class="box">  
+              <img id="image-3" src="img/8.png"/>  
+              <a href="https://arxiv.org/abs/2002.03808" class="item-link">  
+                <span class="caption fade-caption">  
+                  <h3>Transformers in VOICE</h3>  
+                  <p>Vocoder-free End-to-End Voice Conversion with Transformer Network (2020)</p>  
+                </span>
+              </a>  
             </div>         
           </div>
           <div class="column_more"> 
             <div class="box">
-              <img id="image-3" src="img/8.png"/>  
-              <span class="caption fade-caption">  
-                <h3>Racism and AI</h3>  
-                <p>NLP and racism</p>  
+              <img id="image-3" src="img/9.png"/>  
+              <a href="https://www.washingtonpost.com/opinions/2018/12/17/why-your-ai-might-be-racist/?noredirect=on" class="item-link">  
+                <span class="caption fade-caption">  
+                  <h3>Racism and AI</h3>  
+                  <p>Racist behaviour in NN</p>  
+                </span>
+              </a>
             </div>         
           </div>
           <div class="column_more"> 
             <div class="box">  
               <img id="image-3" src="img/10.png"/>
-              <a href="https://projector.tensorflow.org/" class="item-link">  
-              <span class="caption fade-caption">  
-                <h3>CNNs starter guide</h3>  
-                <p>https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53</p>  
-              </span>
+              <a href="https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53" class="item-link">  
+                <span class="caption fade-caption">  
+                  <h3>Convolutional NN</h3>  
+                  <p>Article for CNN beginners</p>  
+                </span>
               </a>
               </div>         
           </div>
         </div>
+      </div>
 
         <!--<div class="row">
             <div class="col-12">
