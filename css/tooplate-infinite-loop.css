@@ -307,6 +307,7 @@ blockquote {
   font-size: 1rem;
   margin-top: 15px;
 }
+
 /*basic notions*/
 
 #basics {
@@ -335,6 +336,13 @@ blockquote {
   color:white;
 }
 
+.tm-basics-text-plot {
+  font-size: 1rem;
+  text-align: justify;
+  text-justify: inter-word;
+  color:#777;
+}
+
 
 .tm-icon-basics {
   display: block;
@@ -345,6 +353,9 @@ blockquote {
 	padding: 20px 0 30px 0;
 }
 
+.object-container{
+  vertical-align: middle;
+}
 
 /* architecture */
 
@@ -1000,11 +1011,102 @@ p {
 
 /* More */
 
+.row_more {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  align-content: center;
+  text-align: center;
+}
+
+/* Create four equal columns that sits next to each other */
+.column_more {
+  flex: 20%;
+  max-width: 17%;
+  padding: 0 4px;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.column_more img {
+  margin-top: 0px;
+  vertical-align: middle;
+  align-content: center;
+  width: 235px;
+  height:235px;
+  display:inline-block;
+}
+
+
+.box {  
+  cursor: pointer;  
+  float: left;  
+  margin: 5px; 
+  position: relative;  
+  overflow: hidden;  
+  height: 235px;  
+  width: 235px;  
+
+}  
+
+.box img {  
+  position: absolute;  
+  left: 0;  
+  -webkit-transition: all 300ms ease-out;  
+  -moz-transition: all 300ms ease-out;  
+  -o-transition: all 300ms ease-out;  
+  -ms-transition: all 300ms ease-out;  
+  transition: all 300ms ease-out;  
+}  
+
+
+.box .caption {  
+  /*font-size: .5em;*/
+  background-color: #333;  
+  /*position: absolute;  <*/
+  color: #fff;  
+  z-index: 100;  
+  -webkit-transition: all 300ms ease-out;  
+  -moz-transition: all 300ms ease-out;  
+  -o-transition: all 300ms ease-out;  
+  -ms-transition: all 300ms ease-out;  
+  transition: all 300ms ease-out;  
+  left: 0;  
+  opacity: 0;  
+  width: 235px; 
+  height: 235px;  
+  text-align: left;  
+  /*padding: 5px;*/
+
+  font-size: 15px;
+  padding: 8px 12px; /*title & subtitle*/
+  position: absolute;
+  bottom: 0px;
+  /*width: 100%;*/
+  text-align: center;
+
+  margin-top: 8px;
+  vertical-align: middle;
+  /*width: 100%;*/
+  display:inline-block;
+
+}
+
+
+
+
+.box:hover .fade-caption {  
+  opacity: 0.8;  
+}  
+
+
+
 #more {
 	background-color: #fff;
   /*background-image: url(../img/neural.jpg); url(../img/infinite-loop-01.jpg);*/
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 110vh;
   min-height: 375px;
   position: relative;
 }

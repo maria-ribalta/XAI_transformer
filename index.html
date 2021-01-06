@@ -187,7 +187,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                 </div>
                 <div class="col-lg-5">
                     <div class="tm-intro-text-container">
-                      <h2 class="tm-text-primary mb-4">An eye in the past</h2>
+                      <h2 class="tm-text-primary mb-4">An eye on the past</h2>
                         <p class="mb-4 tm-intro-text">
                       The attention mechanism, the positional encoding and the skip connections allow 
                       to know where in the sentence we are and not forget to what we have seen without overflowing 
@@ -272,8 +272,10 @@ https://www.tooplate.com/view/2117-infinite-loop
                 </div>
                 
                 <div class="col-sm-6">
+                  <p class="mb-4 tm-basics-text-plot"> \(\to\) See the difference between the embeddings of the words of different sentences and their subtraction</p>
                     <div class="tm-basics-text-container">
-                      <object width="1056" height="500" data="plots/carrot.html"></object>
+                      <object width="2000" height="360" data="plots/embeddings.html"> </object>
+                      <div class="caption">First 150 values of real embeddings of dimension 1024</div>
                     </div>
                 </div>
 
@@ -283,10 +285,11 @@ https://www.tooplate.com/view/2117-infinite-loop
             <div class="row tm-content-box"><!-- second row -->
 
                 <div class="col-sm-6">
-                    <div class="tm-basics-text-container">
-                      <img src="diagrams/tokens.png" style="width:35%" class="arch-center">
-                      <div class="caption">Real example of tokenization</div>
-                    </div>
+                  <p class="mb-4 tm-basics-text-plot"> \(\to\) Compare the differences between words and tokens with the same examples</p>
+                  <div class="tm-basics-text-container">
+                    <object width="1550" height="360" data="plots/tokens.html"> </object>
+                    <div class="caption">First 150 values of real embeddings of dimension 1024</div>
+                  </div>
                 </div>
                 
                 <div class="col-sm-6">
@@ -329,7 +332,7 @@ https://www.tooplate.com/view/2117-infinite-loop
             <div class="col-sm-6">
                 <div class="tm-basics-text-container">
                   <br>
-                  <object width="1056" height="370" data="plots/sinus.html"></object>
+                  <object width="1056" height="400" data="plots/sinus_interactive.html"></object>
                   <div class="caption">Sinusoidal functions are usually used for positional encoding</div>
                 </div>
             </div>
@@ -343,7 +346,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                     This is achieved thanks to what we call positional encoding, a vector of the same dimension as the embeddings that somehow contains information about the position 
                   of the token within a sentence. Said vectors can be trained weights (optimized during the training step) or pre-defined functions that work well enough. In the transformer,
                 the autors tried both methods using a mix of sinusoidal functions for the latter one, which they kept as the results were pretty similar with both techniques.
-              A thorough explanation is found in <a href="#tips">Tips & Tricks</a>.</p>
+              A thorough explanation is found in <a href="#tips">Details</a>.</p>
                 </div>
             </div>
           </div>
@@ -637,7 +640,7 @@ https://www.tooplate.com/view/2117-infinite-loop
               <h2 class="tm-text-primary-attention mb-4"> Types </h2>
                   <p class="mb-4 tm-intro-text">               
                     Having all these, one is capable to generate what it is called the attention matrix. One may recall the the architecure of the Transformers, from which we could
-                    extract three attention matrixes (as we have three blocks that compute it). <br>
+                    extract three attention matrices (as we have three blocks that compute it). <br>
                   </p>
                   <p class="mb-4 tm-intro-text"><b> Self-Attention </b></p>
                     <ul>
@@ -664,7 +667,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                     </ul>
                   
                   <p class="mb-4 tm-intro-text">
-                    Here we introduce real examples of the Self-Attention and Encoder-Decoder Attention matrixes.
+                    Here we introduce real examples of the Self-Attention and Encoder-Decoder Attention matrices.
                   </p>
                   </p>
                 <div class="text-center col-12">
@@ -716,12 +719,13 @@ https://www.tooplate.com/view/2117-infinite-loop
                 </p>
                 
                 <p style="text-align:center;"> 
-                    \( \displaystyle {L(y,\hat{y}) = - \sum^{K}_{k} y^{(k)} log\; \hat{y}^{(k)} } \) 
+                    \( \displaystyle {L(y,\hat{y}) = - \sum_{k} y^{(k)} log\;( \hat{y}^{(k)} )} \) 
                   </p>
                 
                   <p class="text-white mb-4 tm-intro-text">
-                It is a loss exclussively for classification problems and, as it can be seen, it is generalized to any number of classes one may desire. It is really useful and suitable for 
-                classification problems, as it penalizes more the wrong predictions than other losses would do. EXAMPLE (?) Let's show it with an example:
+                Being \(k\) the total number of classes, \(y\) the target probabilities and \(\hat{y}\) the predicted probabilities.
+                As can be seen, it is generalized to any number of classes one may desire. It is also vary useful and suitable for 
+                classification problems, as it penalizes more the wrong predictions than other losses would do.
                 </p>
                 
                 <h2 class="tm-text-primary-train mb-4"> Masks and prediction </h2>
@@ -954,7 +958,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                     \( y(t) = x(t) * h(t) = \displaystyle{ (x*h)(t):=\int _{-\infty }^{\infty }x(\tau )h(t-\tau )\,d\tau }\)
                   </p>
                 <p> Being \(y(t)\) the convolution result, \(x(t)\) the signal and \(h(t)\) the kernel. <br>
-                  It has many uses and applications, even in Deep Learning. Long story short, convolutional Neural Networks (CNNs) use  the signal /(h(t) \)
+                  It has many uses and applications, even in Deep Learning. Long story short, convolutional Neural Networks (CNNs) use  the signal \(h(t) \)
                   as weights to be trained. Nowadays, they are one of the best networks to use in image and video recognition, image classification, etc. And as we have already 
                   pointed out, the linear layer block weights act as a convolution of kernel size 1.
                 </p>
@@ -980,7 +984,104 @@ https://www.tooplate.com/view/2117-infinite-loop
               </p>
           </div>            
         </div>
-        <div class="row">
+
+      
+        <div class="row_more">
+          <div class="column_more"> 
+            <div class="box">  
+              <img id="image-3" src="img/1.png"/>  
+              <span class="caption fade-caption">  
+              <h3>Original Paper</h3>  
+              <p>Attention is all you need (2017)</p>  
+              </span>  
+            </div>         
+          </div>
+          <div class="column_more"> 
+            <div class="box">  
+              <img id="image-3" src="img/3.png"/>  
+              <span class="caption fade-caption">  
+              <h3>Viz is all you need</h3>  
+              <p>The paper behind this project</p>  
+              </span>  
+            </div>         
+          </div>
+          <div class="column_more"> 
+            <div class="box">  
+              <img id="image-3" src="img/5.png"/>  
+              <span class="caption fade-caption">  
+              <h3>Bert</h3>  
+              <p>Transformers in NLP</p>  
+              </span>  
+            </div>         
+          </div>
+          <div class="column_more"> 
+            <div class="box">  
+              <img id="image-3" src="img/4.png"/>  
+              <span class="caption fade-caption">  
+              <h3>Bias</h3>  
+              <p>Language bias inside Deep Learning</p>  
+              </span>  
+            </div>         
+          </div>
+          <div class="column_more"> 
+            <div class="box">  
+              <img id="image-3" src="img/9.png"/>  
+              <span class="caption fade-caption">  
+                <h3>XAI best practices</h3>  
+                <p>overleaf</p>  
+            </div>         
+          </div>
+        </div>
+        <div class="row_more">
+          <div class="column_more"> 
+            <div class="box">  
+              <img id="image-3" src="img/6.png"/>  
+              <span class="caption fade-caption">  
+              <h3>XAI</h3>  
+              <p>Explainable Artificial Intelligence</p>  
+              </span>  
+            </div>         
+          </div>
+          <div class="column_more"> 
+            <div class="box">  
+              <img id="image-3" src="img/2.png"/>  
+              <span class="caption fade-caption">  
+              <h3>Elmo</h3>  
+              <p>A NN that works with NLP too. CHANGE</p>  
+              </span>  
+            </div>         
+          </div>
+          <div class="column_more"> 
+            <div class="box">  
+              <img id="image-3" src="img/7.png"/>  
+              <span class="caption fade-caption">  
+              <h3>Voice</h3>  
+              <p>Transformers for voice processing</p>  
+              </span>  
+            </div>         
+          </div>
+          <div class="column_more"> 
+            <div class="box">
+              <img id="image-3" src="img/8.png"/>  
+              <span class="caption fade-caption">  
+                <h3>Racism and AI</h3>  
+                <p>NLP and racism</p>  
+            </div>         
+          </div>
+          <div class="column_more"> 
+            <div class="box">  
+              <img id="image-3" src="img/10.png"/>
+              <a href="https://projector.tensorflow.org/" class="item-link">  
+              <span class="caption fade-caption">  
+                <h3>CNNs starter guide</h3>  
+                <p>https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53</p>  
+              </span>
+              </a>
+              </div>         
+          </div>
+        </div>
+
+        <!--<div class="row">
             <div class="col-12">
                 <div class="mx-auto tm-gallery-container">
                     <div class="grid tm-gallery">
@@ -1051,7 +1152,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                       </div>
                 </div>                
             </div>        
-          </div> 
+          </div> -->
       </div>
 
       <footer class="text-center small tm-footer">
