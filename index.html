@@ -94,7 +94,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                       <p class="mb-4 tm-intro-text">
                       If you ask what is a Transformer, in general, people will easily define a car that becomes a killer machine (or something like this).
                       However, in the NLP field a Transformer is not even close to any car, or any killer, nor anything like this. <br>
-                      In 2017, Google introduced to the world <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener noreferrer">Attention is all you need</a>, the paper that would not only change the meaning of what is a Transformer but also revolutionize 
+                      In 2017, Google introduced to the world <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener noreferrer">Attention is all you need</a>, the paper that would not only change the meaning of what is a Transformer, but also revolutionize 
                       and improve the results of natural language tasks until the moment.   
                       </p>                     
                     </div>
@@ -120,7 +120,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                       <div class="tm-intro-text-container">
                           <h2 class="tm-text-primary mb-4">State-of-the-art</h2>
                           <p class="mb-4 tm-intro-text">
-                            The paper achieved never-seen-before results in the field, improving all the previous performances previously reached.
+                            The paper achieved never seen before results in the field, improving all the previous performances previously reached.
                             It combined some of the best approaches until then: a seq-to-seq model, attention mechanisms and Encoder-Decoder architectures.</p>
                       </div>
                   </div>
@@ -206,11 +206,11 @@ https://www.tooplate.com/view/2117-infinite-loop
                 <div class="tm-intro-text-container">
                   <h2 class="tm-text-primary mb-4 tm-section-title">How? </h2>                
                     <p class="mb-4 tm-intro-text">
-                     All in all, Transformers are a very powerful tool to develop NLP projects. Despite of it, it is essential to understand the background and have a good 
+                     All in all, Transformers are very powerful tools to develop NLP projects. Despite this, it is essential to understand the background and have a good 
                      knowledge on how this works and runs internally. <br>
-                     In this project we provide an Explainable AI solution in order to comprehend the basis of the Transformers, so anyone who is interested on the theme can expand their notions
+                     In this project we provide an Explainable AI solution in order to comprehend the basis of the Transformers, so anyone who is interested in them can expand their notions
                      via visualization and interaction. <br> <br>
-                     All the results and visualizations shown have been extracted using a real transformer. The task we will focus on is Translation, concretely from English to French. However, 
+                     All the results and visualizations shown have been extracted using a real Transformer. The task we will focus on is translation, concretely from English to French. However, 
                      the concepts explained are also suitable for other tasks. <br>
                     The Transformer used is pretrained with the  <a href="http://www.statmt.org/wmt14/translation-task.html" target="_blank" rel="noopener noreferrer">ACL 2014 ninth workshop
                      on statistical machine translation dataset</a> and no fine-tuning has been applied. The details on the network and the implementation are described in <a href="https://arxiv.org/abs/1806.00187" target="_blank" rel="noopener noreferrer">Scaling Neural Machine Translation</a> 
@@ -233,7 +233,7 @@ https://www.tooplate.com/view/2117-infinite-loop
               <div class="col-lg-12 col-xl-12">
                 <h2 class="text-white mb-4 tm-section-title">Basic Notions</h2>
                 <p class="mb-4 tm-basics-text">
-                  Before we begin, we will clarify some basic notions that will help to understand how the Transformer works and how it achieves the results it does. To do so, we will
+                  Before we begin, we will clarify some basic notions that will help us to understand how the Transformer works and how it achieves the results it does. To do so, we will
                   cover up the most important mechanisms it applies to interpret the natural language the way humans do. All along, we will follow the steps by using analogies with the sentence
                   <strong>My mum eats a carrot</strong>.
                 </p>
@@ -278,7 +278,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                         <p class="mb-4 tm-basics-text">
                           An embedding is the representation of some unit of the natural language in the form of a vector of real numbers. <br>
                           For instance, an embedding could be a vector of 26 numbers where each of them represented the i-th letter of the alphabet and the quantity of the times such letter was found in a certain word.
-                          However, embeddings tend to be more complex than this last example in which <strong>coin</strong> and <strong> icon </strong> would provide the same representation making it problematic.
+                          However, embeddings tend to be more complex than this last example in which <strong>coin</strong> and <strong> icon </strong> would provide the same representation.
                           Recall that the vector represents the structure of the language we choose, not necessarily words: they could represent a letter, part of a word, a word or a whole sentence itself.
                           Although, the most common is for them to be a word or part of it.</p>
                     </div>
@@ -304,7 +304,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                       <p class="mb-4 tm-basics-text">
                         In this Transformer architecture, each embedding represents a part of the word. The tokenization found depends on several aspects:
                         the algorithm of tokenization chosen, the frequency it has on the language and the encoding that is applied. <br>
-                        In addition, in this case, punctuation signs count with an own token (commas, apostrophes, etc) and a special one (&#60eos&#62) is used to indicate end of sentence (omitted in the plot). However, we 
+                        In addition, in this case, punctuation signs haver their own token (commas, apostrophes, etc) and a special one (&#60eos&#62) is used to indicate end of sentence (omitted in the plot). However, we 
                         insist that this is characteristic of the chosen architecture and, thus, not a generalized or standard processing of the words.<br>
                         One rapidly sees that the relationship between tokens and words is not linear, as it can be appreciated on the example.
                     </div>
@@ -603,7 +603,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                   <div class="row">
                     <div class="column">
                       <p class="mb-4 tm-intro-text">
-                      As we have introduced, attention is in simple words, the mechanism that stablishes the relevance of a token in relationship with another. 
+                      As we have introduced, attention is, in simple words, the mechanism that stablishes the relevance of a token in relationship with another. 
                       <br> To do so, it is necessary to 
                       define the three components used: key (K), query (Q) and values (V). These are the vectors that we combine (map) in such a way that produce an output (also a vector) whose values define the mentioned relationships. <br>
                       The output is computed as a weighted sum of the values (V), where the weight assigned to each of them is computed by a compatibility function of the query (Q) with the corresponding key (K). <br>
@@ -635,7 +635,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                       </p>
                         <img src="diagrams/attention_formula.png" style="width:50%" class="arch-center">
                       <p class="mb-4 tm-intro-text">
-                        So each of the attention blocks perform this computation using the respective K, Q and V; which come from different sources according to what block we are found at. <br>
+                        So each of the attention blocks perform this computation using the respective K, Q and V; which come from different sources according to the block they are found. <br>
                         After performing the softmax, the result is scaled by \(d_k\) (the dimension of the embedding) and after it, it is multiplied by V. This way it is ensured that the vectors
                         we deal with are normalized at each step, a fact that is really helpful to avoid overflows and numeric problems.
                       </p>
@@ -665,7 +665,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                     <ul>
                       <li>The second block is found in the Decoder. </li>
                       <li>K, Q and V are the input of the Decoder which, remember, is the last output predicted (or the shifted right target).</li> 
-                      <li>It is called masked because when we train, we mask the future data that we are not able to see when we predict (not having the data masked would imply that the network would see the future, hence it would be "cheating"). </li>
+                      <li>It is called masked because, when we train, we mask the future data that we are not able to see when we predict (not having the data masked would imply that the network would see the future, hence it would be "cheating"). </li>
                       <li>In other words, this Attention is computed with what we have so far in French.</li>
                     </ul>
 
