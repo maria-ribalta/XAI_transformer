@@ -94,7 +94,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                       <p class="mb-4 tm-intro-text">
                       If you ask what is a Transformer, in general, people will easily define a car that becomes a killer machine (or something like this).
                       However, in the NLP field a Transformer is not even close to any car, or any killer, nor anything like this. <br>
-                      In 2017, Google introduced to the world <a href="https://arxiv.org/pdf/1706.03762.pdf" target="_blank" rel="noopener noreferrer">Attention is all you need</a>, the paper that would not only change the meaning of what a Transformer is but also revolutionize 
+                      In 2017, Google introduced to the world <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener noreferrer">Attention is all you need</a>, the paper that would not only change the meaning of what a Transformer is but also revolutionize 
                       and improve the machine translation results until the moment.   
                       </p>                     
                     </div>
@@ -241,6 +241,17 @@ https://www.tooplate.com/view/2117-infinite-loop
             </div><!-- title -->
 
           <div class="row tm-content-box"><!-- first row -->
+
+            <div class="col-sm-6">
+              <div class="tm-basics-text-container">
+                  <h2 class="tm-text-primary-basics mb-4">Seq-to-Seq</h2>
+                  <p class="mb-4 tm-basics-text">
+                    Seq-to-Seq (also known as Seq2Seq) is the abbreviation of sequence-to-sequence, which is the characteristic that indicates that a model is trained with sequences of data (rather than 
+                    single units) and transforms them into another sequence in some other domain. In a machine translation context, this means that the algorithm works with a sequence of language units from the source language (English in our case) and 
+                    translates the whole sequence into the target language (French).
+              </div>
+            </div>
+
                 <div class="col-sm-6">
                   <div class="tm-basics-text-container">
                     <img src="diagrams/seq2seq.png" style="width:75%" class="arch-center">
@@ -248,19 +259,18 @@ https://www.tooplate.com/view/2117-infinite-loop
                   </div>
                 </div>
 
-                <div class="col-sm-6">
-                  <div class="tm-basics-text-container">
-                      <h2 class="tm-text-primary-basics mb-4">Seq-to-Seq</h2>
-                      <p class="mb-4 tm-basics-text">
-                        Seq-to-Seq (also known as Seq2Seq) is the abbreviation of sequence-to-sequence, which is the characteristic that indicates that a model is trained with sequences of data (rather than 
-                        single units) and transforms them into another sequence in some other domain. In a machine translation context, this means that the algorithm works with a sequence of language units from the source language (English in our case) and 
-                        translates the whole sequence into the target language (French).
-                  </div>
-              </div>
 
           </div><!-- first row -->
             
             <div class="row tm-content-box"><!-- first row -->
+
+              <div class="col-sm-6">
+                <p class="mb-4 tm-basics-text-plot"> \(\to\) See the difference between the embeddings of the words of different sentences and the subtraction of the sentences' embeddings</p>
+                  <div class="tm-basics-text-container">
+                    <object width="2000" height="360" data="plots/embeddings.html"> </object>
+                    <div class="caption">First 150 values of real embeddings of dimension 1024</div>
+                  </div>
+              </div>
 
                 <div class="col-sm-6">
                     <div class="tm-basics-text-container">
@@ -274,13 +284,6 @@ https://www.tooplate.com/view/2117-infinite-loop
                     </div>
                 </div>
                 
-                <div class="col-sm-6">
-                  <p class="mb-4 tm-basics-text-plot"> \(\to\) See the difference between the embeddings of the words of different sentences and the subtraction of the sentences' embeddings</p>
-                    <div class="tm-basics-text-container">
-                      <object width="2000" height="360" data="plots/embeddings.html"> </object>
-                      <div class="caption">First 150 values of real embeddings of dimension 1024</div>
-                    </div>
-                </div>
 
             </div><!-- first row -->
             
@@ -577,6 +580,12 @@ https://www.tooplate.com/view/2117-infinite-loop
       <span class="dot" onclick="currentSlide(1)"></span>
       <span class="dot" onclick="currentSlide(2)"></span>
       <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+      <span class="dot" onclick="currentSlide(7)"></span>
+      <span class="dot" onclick="currentSlide(8)"></span>
+
     </div> 
 
   <!--slider END-->
@@ -625,7 +634,7 @@ https://www.tooplate.com/view/2117-infinite-loop
                       </p>
                         <img src="diagrams/attention_formula.png" style="width:50%" class="arch-center">
                       <p class="mb-4 tm-intro-text">
-                        So each of the attention blocks perform this computation using the respective K,Q and V; which come from different sources according to which block we are found. <br>
+                        So each of the attention blocks perform this computation using the respective K,Q and V; which come from different sources according to what block we are found at. <br>
                         After performing the softmax, the result is scaled by \(d_k\) (the dimension of the embedding) and after it, it is multiplied by V. This way it is ensured that the vectors
                         we deal with are normalized at each step, a fact that is really helpful to avoid overflows and numeric problems.
                       </p>
@@ -662,8 +671,8 @@ https://www.tooplate.com/view/2117-infinite-loop
                   <p class="mb-4 tm-intro-text"><b>Encoder-Decoder Attention</b></p>
                     <ul>
                     <li>The third and last block is also found in the Decoder.</li>
-                      <li>K and Q are the output of the encoder (therefore, the tokens in the source language, English).</li>
-                      <li>V is the information we have of the Decoder up to that point, the shifted right outputs in French.</li>
+                      <li>K and V are the output of the encoder (therefore, the tokens in the source language, English).</li>
+                      <li>Q is the information we have of the Decoder up to that point, the shifted right outputs in French.</li>
                       <li>It is called Encoder-Decoder Attention due to the fact that combines the information of the Encoder (source language) and Decoder (target language), but 
                       in terms of computations and structure it has no difference with the previous ones.</li>
                       <li>This might be the most interesting matrix of all three, as it shows the relationships of the words / tokens of the source  and the target language. </li>
@@ -1111,7 +1120,7 @@ https://www.tooplate.com/view/2117-infinite-loop
 
       <footer class="text-center small tm-footer">
         <p class="mb-0">
-        Copyright &copy; 2020 Maria Ribalta
+        Copyright &copy; 2021 Maria Ribalta
         
         . <a rel="nofollow" href="https://www.tooplate.com" target="_blank" rel="noopener noreferrer" title="HTML templates">Inspired by TOOPLATE</a></p>
       </footer>
